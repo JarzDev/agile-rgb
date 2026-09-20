@@ -42,6 +42,7 @@ Thumbs.db
 !dependencies/**/*.exe
 *.bat
 !dependencies/**/*.bat
+!scripts/**/*.bat
 
 # C++ objects and libs
 *.a
@@ -75,6 +76,7 @@ ui_*.h
 *.jsc
 Makefile*
 *build-*
+!scripts/build-*
 *.qm
 *.prl
 
