@@ -17,14 +17,34 @@
 #include "AgileRgbTemperaturePage.h"
 #include "AgileRgbRainbowPage.h"
 
+#include "ResourceManager.h"
+#include "SettingsManager.h"
+
 #include <QFile>
 #include <QTextStream>
+#include <QApplication>
+
+using json = nlohmann::json;
 
 AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AgileRgbSimpleDialog)
 {
+    /*-------------------------------------------------*\
+    | Load the saved UI language (shared with the classic |
+    | dialog's "UserInterface" settings) before building   |
+    | the UI, so labels are translated on first render      |
+    \*-------------------------------------------------*/
+    json ui_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("UserInterface");
+    std::string saved_language = ui_settings.contains("language") ? ui_settings["language"].get<std::string>() : "en_US";
+
+    SetLanguage(saved_language);
+
     ui->setupUi(this);
+
+    ui->LanguageBox->blockSignals(true);
+    ui->LanguageBox->setCurrentIndex(saved_language == "es_ES" ? 1 : 0);
+    ui->LanguageBox->blockSignals(false);
 
     /*-------------------------------------------------*\
     | Apply the dark theme with RGB accent borders        |
@@ -74,4 +94,30 @@ void AgileRgbSimpleDialog::on_SimpleTabBar_currentChanged(int index)
     ui->FixedColorTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->FixedColorTab));
     ui->TemperatureTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->TemperatureTab));
     ui->RainbowTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->RainbowTab));
+}
+
+void AgileRgbSimpleDialog::SetLanguage(std::string locale)
+{
+    QApplication* app = static_cast<QApplication *>(QApplication::instance());
+
+    app->removeTranslator(&translator);
+
+    bool loaded = translator.load(":/i18n/" + QString("OpenRGB_%1.qm").arg(QString::fromStdString(locale)));
+
+    if(loaded)
+    {
+        app->installTranslator(&translator);
+    }
+}
+
+void AgileRgbSimpleDialog::on_LanguageBox_currentIndexChanged(int index)
+{
+    std::string locale = (index == 1) ? "es_ES" : "en_US";
+
+    SetLanguage(locale);
+
+    json ui_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("UserInterface");
+    ui_settings["language"] = locale;
+    ResourceManager::get()->GetSettingsManager()->SetSettings("UserInterface", ui_settings);
+    ResourceManager::get()->GetSettingsManager()->SaveSettings();
 }

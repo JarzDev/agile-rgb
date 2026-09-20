@@ -54,6 +54,20 @@
        </spacer>
       </item>
       <item>
+       <widget class="QComboBox" name="LanguageBox">
+        <item>
+         <property name="text">
+          <string>English</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Español</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="ProModeButton">
         <property name="text">
          <string>Pro Mode</string>

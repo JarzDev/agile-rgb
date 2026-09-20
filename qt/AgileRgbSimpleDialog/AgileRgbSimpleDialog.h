@@ -13,6 +13,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QTranslator>
 
 #include "OpenRGBDialog.h"
 
@@ -39,8 +40,12 @@ public:
 private slots:
     void        on_ProModeButton_clicked();
     void        on_SimpleTabBar_currentChanged(int index);
+    void        on_LanguageBox_currentIndexChanged(int index);
 
 private:
     Ui::AgileRgbSimpleDialog*  ui;
     OpenRGBDialog*             pro_dialog;
+    QTranslator                translator;
+
+    void        SetLanguage(std::string locale);
 };

@@ -2,6 +2,167 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>AgileRgbFixedColorPage</name>
+    <message>
+        <location filename="../AgileRgbFixedColorPage/AgileRgbFixedColorPage.ui" line="23"/>
+        <source>Fixed Color &amp; Breathing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbFixedColorPage/AgileRgbFixedColorPage.ui" line="50"/>
+        <source>Brightness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbFixedColorPage/AgileRgbFixedColorPage.ui" line="75"/>
+        <source>Breathing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbFixedColorPage/AgileRgbFixedColorPage.ui" line="105"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AgileRgbRainbowPage</name>
+    <message>
+        <location filename="../AgileRgbRainbowPage/AgileRgbRainbowPage.ui" line="23"/>
+        <source>Rainbow Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbRainbowPage/AgileRgbRainbowPage.ui" line="30"/>
+        <source>Cycle Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbRainbowPage/AgileRgbRainbowPage.ui" line="53"/>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbRainbowPage/AgileRgbRainbowPage.ui" line="68"/>
+        <source>Left to Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbRainbowPage/AgileRgbRainbowPage.ui" line="78"/>
+        <source>Right to Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbRainbowPage/AgileRgbRainbowPage.ui" line="94"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AgileRgbSimpleDialog</name>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="14"/>
+        <source>Agile Rgb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="45"/>
+        <source>Agile RGB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
+        <source>Pro Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="72"/>
+        <source>Fixed Colors &amp; Breathing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="77"/>
+        <source>Temperature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="82"/>
+        <source>Rainbow</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AgileRgbTemperaturePage</name>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="25"/>
+        <source>Temperature Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="39"/>
+        <source>Current GPU Temperature:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="132"/>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="61"/>
+        <source>Enable temperature-reactive lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="68"/>
+        <source>Default colors are green, yellow, and red. Click a color wheel to change them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="100"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="107"/>
+        <source>Save &amp; Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AgileRgbTemperatureRangeCard</name>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="28"/>
+        <source>Temperature Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="37"/>
+        <source>Above (°C):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="54"/>
+        <source>Up to (°C):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="37"/>
+        <source>Low Temperature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="41"/>
+        <source>Medium Temperature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="45"/>
+        <source>High Temperature (Alert)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DDPSettingsEntry</name>
     <message>
         <location filename="../ManualDevicesSettingsPage/DDPSettingsEntry/DDPSettingsEntry.ui" line="26"/>
@@ -158,22 +319,22 @@
 <context>
     <name>DetectionManager</name>
     <message>
-        <location filename="../../DetectionManager.cpp" line="48"/>
+        <location filename="../../DetectionManager.cpp" line="50"/>
         <source>&lt;h2&gt;Warning:&lt;/h2&gt;&lt;p&gt;One or more I2C/SMBus interfaces failed to initialize.&lt;/p&gt;&lt;p&gt;Depending on which interfaces failed to initialize, some RGB DRAM modules, some motherboards&apos; onboard RGB lighting, and RGB graphics cards may not be available in OpenRGB.&lt;/p&gt;&lt;p&gt;On Windows, this is usually caused by a failure to load the PawnIO driver.&lt;/p&gt;&lt;p&gt;For OpenRGB to access these devices, you must install PawnIO from &lt;a href=&apos;https://pawnio.eu/&apos;&gt;https://pawnio.eu&lt;/a&gt; and run OpenRGB as administrator or as a system service.&lt;/p&gt;&lt;p&gt;If you are not using any of the devices listed above, you can safely ignore this message.&lt;/p&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../DetectionManager.cpp" line="55"/>
+        <location filename="../../DetectionManager.cpp" line="59"/>
         <source>&lt;h2&gt;Warning:&lt;/h2&gt;&lt;p&gt;One or more I2C/SMBus interfaces failed to initialize.&lt;/p&gt;&lt;p&gt;Depending on which interfaces failed to initialize, some RGB DRAM modules, some motherboards&apos; onboard RGB lighting, and RGB graphics cards may not be available in OpenRGB.&lt;/p&gt;&lt;p&gt;On Linux, this is usually because the i2c-dev module is not loaded.&lt;/p&gt;&lt;p&gt;For OpenRGB to access these devices, you must load the i2c-dev module along with the correct I2C driver module for your motherboard. This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.&lt;/p&gt;&lt;p&gt;If you are not using any of the devices listed above, you can safely ignore this message.&lt;/p&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../DetectionManager.cpp" line="64"/>
+        <location filename="../../DetectionManager.cpp" line="70"/>
         <source>&lt;h2&gt;Warning:&lt;/h2&gt;&lt;p&gt;The OpenRGB udev rules are not installed.&lt;/p&gt;&lt;p&gt;Most devices will not be available unless running OpenRGB as as a system service or as root.&lt;/p&gt;&lt;p&gt;If using AppImage, Flatpak, or self-compiled versions of OpenRGB you must install the udev rules manually&lt;/p&gt;&lt;p&gt;See &lt;a href=&apos;https://openrgb.org/udev&apos;&gt;https://openrgb.org/udev&lt;/a&gt; to install the udev rules manually&lt;/p&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../DetectionManager.cpp" line="70"/>
+        <location filename="../../DetectionManager.cpp" line="76"/>
         <source>&lt;h2&gt;Warning:&lt;/h2&gt;&lt;p&gt;Multiple OpenRGB udev rules are installed.&lt;/p&gt;&lt;p&gt;The udev rules file 60-openrgb.rules is installed in both /etc/udev/rules.d and /usr/lib/udev/rules.d.&lt;/p&gt;&lt;p&gt;Multiple udev rules files can conflict, it is recommended to remove one of them.&lt;/p&gt;</source>
         <translation></translation>
     </message>
@@ -667,7 +828,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="593"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="595"/>
         <source>Edit Zone</source>
         <translation></translation>
     </message>
@@ -688,7 +849,7 @@
     </message>
     <message>
         <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.ui" line="183"/>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1662"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1702"/>
         <source>Save To Device</source>
         <translation></translation>
     </message>
@@ -698,144 +859,129 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2013"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1962"/>
         <source>Set individual LEDs to static colors.  Safe for use with software-driven effects.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2014"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1963"/>
         <source>Set individual LEDs to static colors.  Not safe for use with software-driven effects.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2015"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1964"/>
         <source>Sets the entire device or a zone to a single color.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2016"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1965"/>
         <source>Gradually fades between fully off and fully on.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2017"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1966"/>
         <source>Abruptly changes between fully off and fully on.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2018"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1967"/>
         <source>Gradually cycles through the entire color spectrum.  All lights on the device are the same color.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2019"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1968"/>
         <source>Gradually cycles through the entire color spectrum.  Produces a rainbow pattern that moves.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="2020"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1969"/>
         <source>Flashes lights when keys or buttons are pressed.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="506"/>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1811"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="508"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1748"/>
         <source>Entire Device</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="537"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="539"/>
         <source>Edit Device</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="562"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="564"/>
         <source>Entire Zone</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1523"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1539"/>
         <source>Left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1524"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1540"/>
         <source>Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1529"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1545"/>
         <source>Up</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1530"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1546"/>
         <source>Down</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1535"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1551"/>
         <source>Horizontal</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1536"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1552"/>
         <source>Vertical</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1541"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1557"/>
         <source>Up-Left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1542"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1558"/>
         <source>Up-Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1543"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1559"/>
         <source>Down-Left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1544"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1560"/>
         <source>Down-Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1657"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1697"/>
         <source>Saved To Device</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1667"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1707"/>
         <source>Saving Not Supported</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1727"/>
-        <source>All Zones</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="1765"/>
-        <source>Mode Specific</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="616"/>
+        <location filename="../OpenRGBDevicePage/OpenRGBDevicePage.cpp" line="618"/>
         <source>Entire Segment</source>
         <translation></translation>
     </message>
 </context>
 <context>
     <name>OpenRGBDialog</name>
-    <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="14"/>
-        <source>OpenRGB</source>
-        <translation></translation>
-    </message>
     <message>
         <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="34"/>
         <source>Devices</source>
@@ -862,11 +1008,21 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="165"/>
+        <source>Agile Rgb is detecting devices...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="108"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="386"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="569"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="406"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="589"/>
         <source>Rescan Devices</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="14"/>
+        <source>Agile Rgb</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="138"/>
@@ -877,13 +1033,8 @@
     </message>
     <message>
         <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="115"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="1985"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="2162"/>
         <source>Delete Profile</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.ui" line="165"/>
-        <source>OpenRGB is detecting devices...</source>
         <translation></translation>
     </message>
     <message>
@@ -902,124 +1053,124 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="342"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="567"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="362"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="587"/>
         <source>Show/Hide</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="346"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="558"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="366"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="578"/>
         <source>Profiles</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="350"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="559"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="370"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="579"/>
         <source>Quick Colors</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="352"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="560"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="372"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="580"/>
         <source>Red</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="356"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="561"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="376"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="581"/>
         <source>Yellow</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="360"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="562"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="380"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="582"/>
         <source>Green</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="364"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="563"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="384"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="583"/>
         <source>Cyan</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="368"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="564"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="388"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="584"/>
         <source>Blue</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="372"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="565"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="392"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="585"/>
         <source>Magenta</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="376"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="566"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="396"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="586"/>
         <source>White</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="382"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="568"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="402"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="588"/>
         <source>Lights Off</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="390"/>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="570"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="410"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="590"/>
         <source>Exit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="686"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="706"/>
         <source>Plugins</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="703"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="723"/>
         <source>About OpenRGB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="720"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="740"/>
         <source>Supported Devices</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="737"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="757"/>
         <source>General Settings</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="754"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="774"/>
         <source>Manually Added Devices</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="917"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="937"/>
         <source>SMBus Tools</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="931"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="951"/>
         <source>SDK Client</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="944"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="964"/>
         <source>SDK Server</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="1985"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="2162"/>
         <source>Do you really want to delete this profile?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="2255"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="2432"/>
         <source>Log Console</source>
         <translation></translation>
     </message>
@@ -1027,12 +1178,12 @@
 <context>
     <name>OpenRGBDynamicSettingsWidget</name>
     <message>
-        <location filename="../OpenRGBDynamicSettingsWidget/OpenRGBDynamicSettingsWidget.cpp" line="349"/>
+        <location filename="../OpenRGBDynamicSettingsWidget/OpenRGBDynamicSettingsWidget.cpp" line="354"/>
         <source>English - US</source>
         <translation>English - US</translation>
     </message>
     <message>
-        <location filename="../OpenRGBDynamicSettingsWidget/OpenRGBDynamicSettingsWidget.cpp" line="361"/>
+        <location filename="../OpenRGBDynamicSettingsWidget/OpenRGBDynamicSettingsWidget.cpp" line="366"/>
         <source>System Default</source>
         <translation></translation>
     </message>
@@ -1409,6 +1560,16 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="../OpenRGBSoftwareInfoPage/OpenRGBSoftwareInfoPage.ui" line="284"/>
+        <source>&lt;b&gt;Agile Rgb&lt;/b&gt;, an open-source RGB control utility (fork of OpenRGB)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../OpenRGBSoftwareInfoPage/OpenRGBSoftwareInfoPage.ui" line="312"/>
+        <source>Based on OpenRGB by Adam Honse and the OpenRGB Team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../OpenRGBSoftwareInfoPage/OpenRGBSoftwareInfoPage.ui" line="319"/>
         <source>Mode Value</source>
         <translation></translation>
@@ -1461,16 +1622,6 @@
     <message>
         <location filename="../OpenRGBSoftwareInfoPage/OpenRGBSoftwareInfoPage.ui" line="305"/>
         <source>Mode:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../OpenRGBSoftwareInfoPage/OpenRGBSoftwareInfoPage.ui" line="312"/>
-        <source>Adam Honse, OpenRGB Team</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../OpenRGBSoftwareInfoPage/OpenRGBSoftwareInfoPage.ui" line="284"/>
-        <source>&lt;b&gt;OpenRGB&lt;/b&gt;, an open-source RGB control utility</source>
         <translation></translation>
     </message>
     <message>
@@ -1892,347 +2043,357 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="238"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="251"/>
         <source>Load Window Geometry</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="230"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="243"/>
         <source>Run Zone Checks on Rescan</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="168"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="181"/>
         <source>Start Minimized</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="190"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="203"/>
         <source>Minimize on Close</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="221"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="234"/>
         <source>Numerical Labels</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="222"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="235"/>
         <source>Display numerical labels for otherwise non-labeled LEDs in the LED view</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="234"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="247"/>
         <source>Window Geometry</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="242"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="255"/>
         <source>Save on Exit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="197"/>
+        <location filename="../../ResourceManager.cpp" line="237"/>
         <source>HID Safe Mode</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="199"/>
+        <location filename="../../ResourceManager.cpp" line="239"/>
         <source>Use an alternate method for detecting HID devices</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="201"/>
+        <location filename="../../ResourceManager.cpp" line="241"/>
         <source>Initial Detection Delay (ms)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="203"/>
+        <location filename="../../ResourceManager.cpp" line="243"/>
         <source>Amount of time, in milliseconds, to wait before detecting devices when started</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="205"/>
+        <location filename="../../ResourceManager.cpp" line="245"/>
         <source>Detection</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="212"/>
+        <location filename="../../ResourceManager.cpp" line="252"/>
         <source>Enable Log Console</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="219"/>
+        <location filename="../../ResourceManager.cpp" line="259"/>
         <source>Log Level</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="237"/>
+        <location filename="../../ResourceManager.cpp" line="277"/>
         <source>Log File Count Limit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="239"/>
+        <location filename="../../ResourceManager.cpp" line="279"/>
         <source>Maximum number of log files to keep, 0 for no limit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="243"/>
+        <location filename="../../ResourceManager.cpp" line="283"/>
+        <source>Dialog No-Show Hashes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ResourceManager.cpp" line="285"/>
+        <source>A list of hashes of dialog text that should not be shown.  Selecting &quot;Do Not Show Again&quot; on a dialog adds it to this list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ResourceManager.cpp" line="289"/>
         <source>Log Manager</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="250"/>
+        <location filename="../../ResourceManager.cpp" line="296"/>
         <source>Serve All Controllers</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="252"/>
+        <location filename="../../ResourceManager.cpp" line="298"/>
         <source>Include controllers provided by client connections and plugins</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="254"/>
+        <location filename="../../ResourceManager.cpp" line="300"/>
         <source>Default Host</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="258"/>
+        <location filename="../../ResourceManager.cpp" line="304"/>
         <source>Default Port</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="264"/>
+        <location filename="../../ResourceManager.cpp" line="310"/>
         <source>Legacy Workaround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="266"/>
+        <location filename="../../ResourceManager.cpp" line="312"/>
         <source>Workaround for some older SDK implementations that sent incorrect packet size for certain packets</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="268"/>
+        <location filename="../../ResourceManager.cpp" line="314"/>
         <source>Server</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="173"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="186"/>
         <source>Custom Arguments</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="195"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="208"/>
         <source>Monochrome Tray Icon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="244"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="257"/>
         <source>Save window geometry on exit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="247"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="260"/>
         <source>X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="251"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="264"/>
         <source>Y</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="255"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="268"/>
         <source>Width</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="259"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="272"/>
         <source>Height</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="263"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="276"/>
         <source>User Interface</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="275"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="289"/>
         <source>SMBus Sleep Mode (restart required)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="284"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="299"/>
         <source>AMD SMBus: Reduce CPU Usage (restart required)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="272"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="285"/>
         <source>Shared SMBus Access (restart required)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="185"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="198"/>
         <source>Language</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="226"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="239"/>
         <source>Disable Key Expansion</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="200"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="213"/>
         <source>Hex Format</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="163"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="176"/>
         <source>Enable Start at Login</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="165"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="178"/>
         <source>Start OpenRGB on login</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="170"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="183"/>
         <source>Start minimized to the system tray</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="175"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="188"/>
         <source>Additional command line arguments to pass to OpenRGB when starting on login</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="178"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="191"/>
         <source>Start at Login</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="187"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="200"/>
         <source>Language for the user interface</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="191"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="204"/>
         <source>Keep OpenRGB active in the system tray when closing the main window</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="196"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="209"/>
         <source>Use a monochrome icon in the system tray instead of a full color icon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="202"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="215"/>
         <source>Select #BBGGRR or #RRGGBB format for hex display and input</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="207"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="220"/>
         <source>Compact Tabs</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="209"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="222"/>
         <source>Display sidebar tabs as icons only</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="212"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="225"/>
         <source>Tabs on Top</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="214"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="227"/>
         <source>Display tabs on top instead of on the left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="217"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="230"/>
         <source>Show LED View by Default</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="288"/>
+        <location filename="../OpenRGBDialog/OpenRGBDialog.cpp" line="303"/>
         <source>Drivers</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ResourceManager.cpp" line="215"/>
+        <location filename="../../ResourceManager.cpp" line="255"/>
         <source>Enable Log File</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../OpenRGBDynamicSettingsWidget/OpenRGBDynamicSettingsWidget.cpp" line="357"/>
+        <location filename="../OpenRGBDynamicSettingsWidget/OpenRGBDynamicSettingsWidget.cpp" line="362"/>
         <source>English - US</source>
         <translation>English - US</translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="51"/>
+        <location filename="../../ProfileManager.cpp" line="58"/>
         <source>Load Profile on Exit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="53"/>
+        <location filename="../../ProfileManager.cpp" line="60"/>
         <source>Profile to load when OpenRGB exits</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="55"/>
+        <location filename="../../ProfileManager.cpp" line="62"/>
         <source>Load Profile on Open</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="57"/>
+        <location filename="../../ProfileManager.cpp" line="64"/>
         <source>Profile to load when OpenRGB opens</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="59"/>
+        <location filename="../../ProfileManager.cpp" line="66"/>
         <source>Load Profile on Resume</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="61"/>
+        <location filename="../../ProfileManager.cpp" line="68"/>
         <source>Profile to load after system resumes from sleep</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="63"/>
+        <location filename="../../ProfileManager.cpp" line="70"/>
         <source>Load Profile on Service Shutdown</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="65"/>
+        <location filename="../../ProfileManager.cpp" line="72"/>
         <source>Profile to load when the OpenRGB background service shuts down</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="67"/>
+        <location filename="../../ProfileManager.cpp" line="74"/>
         <source>Load Profile on Service Startup</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="69"/>
+        <location filename="../../ProfileManager.cpp" line="76"/>
         <source>Profile to load when the OpenRGB background service starts up</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="71"/>
+        <location filename="../../ProfileManager.cpp" line="78"/>
         <source>Load Profile on Suspend</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="73"/>
+        <location filename="../../ProfileManager.cpp" line="80"/>
         <source>Profile to load before system enters sleep mode</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ProfileManager.cpp" line="75"/>
+        <location filename="../../ProfileManager.cpp" line="82"/>
         <source>Profile Manager</source>
         <translation></translation>
     </message>
