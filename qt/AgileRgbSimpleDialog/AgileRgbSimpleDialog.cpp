@@ -17,11 +17,25 @@
 #include "AgileRgbTemperaturePage.h"
 #include "AgileRgbRainbowPage.h"
 
+#include <QFile>
+#include <QTextStream>
+
 AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AgileRgbSimpleDialog)
 {
     ui->setupUi(this);
+
+    /*-------------------------------------------------*\
+    | Apply the dark theme with RGB accent borders        |
+    \*-------------------------------------------------*/
+    QFile theme_file(":/AgileRgbSimpleDialog/AgileRgbTheme.qss");
+
+    if(theme_file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream theme_stream(&theme_file);
+        setStyleSheet(theme_stream.readAll());
+    }
 
     /*-------------------------------------------------*\
     | The classic dialog is created up front (so devices |

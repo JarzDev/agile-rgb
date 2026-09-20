@@ -1,0 +1,212 @@
+/*---------------------------------------------------------*\
+| AgileRgbTheme.qss                                          |
+|                                                             |
+|   Dark theme with RGB accent borders for the simplified     |
+|   Agile Rgb window, matching the project's design mockups    |
+|                                                             |
+|   This file is part of the Agile Rgb project                |
+|   SPDX-License-Identifier: GPL-2.0-or-later                 |
+\*---------------------------------------------------------*/
+
+AgileRgbSimpleDialog,
+AgileRgbSimpleDialog QWidget#centralWidget
+{
+    background-color: #1a1c22;
+}
+
+AgileRgbSimpleDialog QLabel
+{
+    color: #f0f0f2;
+    background: transparent;
+}
+
+AgileRgbSimpleDialog #TitleLabel
+{
+    color: #f5f5f7;
+    font-weight: bold;
+}
+
+/*-----------------------------------------------------*\
+| Tab bar                                                |
+\*-----------------------------------------------------*/
+AgileRgbSimpleDialog QTabWidget::pane
+{
+    background-color: #232631;
+    border: none;
+    top: -1px;
+}
+
+AgileRgbSimpleDialog QTabBar::tab
+{
+    background-color: #232631;
+    color: #a5a8b5;
+    padding: 8px 18px;
+    margin-right: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 600;
+}
+
+AgileRgbSimpleDialog QTabBar::tab:selected
+{
+    background-color: #2c303e;
+    color: #ffffff;
+    border-bottom: 2px solid #35d0ba;
+}
+
+AgileRgbSimpleDialog QTabBar::tab:hover:!selected
+{
+    color: #e0e0e6;
+}
+
+/*-----------------------------------------------------*\
+| Pro Mode button                                        |
+\*-----------------------------------------------------*/
+AgileRgbSimpleDialog #ProModeButton
+{
+    background-color: #2c303e;
+    color: #f0f0f2;
+    border: 1px solid #454a5c;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 600;
+}
+
+AgileRgbSimpleDialog #ProModeButton:hover
+{
+    background-color: #363b4c;
+    border: 1px solid #5a6178;
+}
+
+AgileRgbSimpleDialog #ProModeButton:pressed
+{
+    background-color: #262a36;
+}
+
+/*-----------------------------------------------------*\
+| Page backgrounds (the three tab contents)               |
+\*-----------------------------------------------------*/
+AgileRgbFixedColorPage,
+AgileRgbTemperaturePage,
+AgileRgbRainbowPage,
+AgileRgbTemperatureRangeCard
+{
+    background-color: #232631;
+}
+
+/*-----------------------------------------------------*\
+| Per-page glowing accent border, matching each mode's    |
+| color in the design mockup:                             |
+|   Fixed Colors -> teal/green accent                      |
+|   Temperature  -> orange/red accent                      |
+|   Rainbow      -> purple/blue accent                     |
+\*-----------------------------------------------------*/
+AgileRgbFixedColorPage
+{
+    border: 1px solid #35d0ba;
+    border-radius: 10px;
+}
+
+AgileRgbTemperaturePage
+{
+    border: 1px solid #ff7a45;
+    border-radius: 10px;
+}
+
+AgileRgbRainbowPage
+{
+    border: 1px solid #a06bff;
+    border-radius: 10px;
+}
+
+AgileRgbTemperatureRangeCard
+{
+    border: 1px solid #3a3f4e;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/*-----------------------------------------------------*\
+| Sliders                                                 |
+\*-----------------------------------------------------*/
+AgileRgbSimpleDialog QSlider::groove:horizontal
+{
+    height: 6px;
+    background: #3a3f4e;
+    border-radius: 3px;
+}
+
+AgileRgbSimpleDialog QSlider::handle:horizontal
+{
+    width: 18px;
+    height: 18px;
+    margin: -6px 0;
+    background: #ffffff;
+    border: 2px solid #35d0ba;
+    border-radius: 9px;
+}
+
+AgileRgbSimpleDialog QSlider::sub-page:horizontal
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #35d0ba, stop:1 #4facfe);
+    border-radius: 3px;
+}
+
+/*-----------------------------------------------------*\
+| Checkboxes styled as toggle switches                    |
+\*-----------------------------------------------------*/
+AgileRgbSimpleDialog QCheckBox::indicator
+{
+    width: 38px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #3a3f4e;
+}
+
+AgileRgbSimpleDialog QCheckBox::indicator:checked
+{
+    background-color: #35d0ba;
+}
+
+/*-----------------------------------------------------*\
+| Push buttons (Apply / direction selectors)               |
+\*-----------------------------------------------------*/
+AgileRgbSimpleDialog QPushButton
+{
+    background-color: #2c303e;
+    color: #f0f0f2;
+    border: 1px solid #454a5c;
+    border-radius: 16px;
+    padding: 6px 18px;
+    font-weight: 600;
+}
+
+AgileRgbSimpleDialog QPushButton:hover
+{
+    background-color: #363b4c;
+}
+
+AgileRgbSimpleDialog QPushButton:pressed
+{
+    background-color: #262a36;
+}
+
+AgileRgbSimpleDialog QPushButton:checkable:checked
+{
+    background-color: #35d0ba;
+    color: #10131a;
+    border: 1px solid #35d0ba;
+}
+
+/*-----------------------------------------------------*\
+| Spin boxes (temperature thresholds)                     |
+\*-----------------------------------------------------*/
+AgileRgbSimpleDialog QSpinBox
+{
+    background-color: #1a1c22;
+    color: #f0f0f2;
+    border: 1px solid #3a3f4e;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
