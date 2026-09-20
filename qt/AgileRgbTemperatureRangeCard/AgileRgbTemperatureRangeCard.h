@@ -46,6 +46,9 @@ public:
 signals:
     void        RangeChanged();
 
+protected:
+    void        changeEvent(QEvent *event) override;
+
 private slots:
     void        on_MinTempSpinBox_valueChanged(int value);
     void        on_MaxTempSpinBox_valueChanged(int value);

@@ -28,6 +28,16 @@ AgileRgbFixedColorPage::~AgileRgbFixedColorPage()
     delete ui;
 }
 
+void AgileRgbFixedColorPage::changeEvent(QEvent *event)
+{
+    if(event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+
+    QFrame::changeEvent(event);
+}
+
 void AgileRgbFixedColorPage::SetPageActive(bool active)
 {
     if(active)

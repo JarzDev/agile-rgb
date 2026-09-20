@@ -37,6 +37,9 @@ public:
     \*-----------------------------------------------------*/
     OpenRGBDialog*  GetProDialog();
 
+protected:
+    void        changeEvent(QEvent *event) override;
+
 private slots:
     void        on_ProModeButton_clicked();
     void        on_SimpleTabBar_currentChanged(int index);

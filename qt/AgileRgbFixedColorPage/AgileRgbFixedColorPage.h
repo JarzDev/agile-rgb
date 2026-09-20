@@ -37,6 +37,9 @@ public:
     \*-----------------------------------------------------*/
     void        SetPageActive(bool active);
 
+protected:
+    void        changeEvent(QEvent *event) override;
+
 private slots:
     void        on_ColorWheelBox_colorChanged(const QColor color);
     void        on_BrightnessSlider_valueChanged(int value);

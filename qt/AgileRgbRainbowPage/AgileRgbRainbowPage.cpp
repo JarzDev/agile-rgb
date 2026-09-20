@@ -26,6 +26,16 @@ AgileRgbRainbowPage::~AgileRgbRainbowPage()
     delete ui;
 }
 
+void AgileRgbRainbowPage::changeEvent(QEvent *event)
+{
+    if(event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+
+    QFrame::changeEvent(event);
+}
+
 void AgileRgbRainbowPage::SetPageActive(bool active)
 {
     if(active)

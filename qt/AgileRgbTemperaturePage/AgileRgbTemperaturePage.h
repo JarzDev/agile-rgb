@@ -39,6 +39,9 @@ public:
     \*-----------------------------------------------------*/
     void        SetPageActive(bool active);
 
+protected:
+    void        changeEvent(QEvent *event) override;
+
 public slots:
     void        UpdateCurrentTemperature();
 

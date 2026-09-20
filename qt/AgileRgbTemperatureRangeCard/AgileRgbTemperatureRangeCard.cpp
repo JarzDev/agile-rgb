@@ -27,6 +27,17 @@ AgileRgbTemperatureRangeCard::~AgileRgbTemperatureRangeCard()
     delete ui;
 }
 
+void AgileRgbTemperatureRangeCard::changeEvent(QEvent *event)
+{
+    if(event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+        SetRangeKind(kind);
+    }
+
+    QFrame::changeEvent(event);
+}
+
 void AgileRgbTemperatureRangeCard::SetRangeKind(TemperatureRangeKind new_kind)
 {
     kind = new_kind;

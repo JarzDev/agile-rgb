@@ -121,3 +121,13 @@ void AgileRgbSimpleDialog::on_LanguageBox_currentIndexChanged(int index)
     ResourceManager::get()->GetSettingsManager()->SetSettings("UserInterface", ui_settings);
     ResourceManager::get()->GetSettingsManager()->SaveSettings();
 }
+
+void AgileRgbSimpleDialog::changeEvent(QEvent *event)
+{
+    if(event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+
+    QMainWindow::changeEvent(event);
+}

@@ -45,6 +45,25 @@ AgileRgbTemperaturePage::~AgileRgbTemperaturePage()
     delete ui;
 }
 
+void AgileRgbTemperaturePage::changeEvent(QEvent *event)
+{
+    if(event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+
+        /*---------------------------------------------------*\
+        | The range card titles ("Low Temperature", etc.) are  |
+        | set dynamically in code, not via the .ui file, so    |
+        | they need to be re-applied after retranslateUi()      |
+        \*---------------------------------------------------*/
+        ui->LowRangeCard->SetRangeKind(TemperatureRangeKind::LOW);
+        ui->MediumRangeCard->SetRangeKind(TemperatureRangeKind::MEDIUM);
+        ui->HighRangeCard->SetRangeKind(TemperatureRangeKind::HIGH);
+    }
+
+    QFrame::changeEvent(event);
+}
+
 void AgileRgbTemperaturePage::SetPageActive(bool active)
 {
     if(active)
