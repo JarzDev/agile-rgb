@@ -10,13 +10,16 @@
 
 ## Design Direction
 
-Agile Rgb aims to simplify OpenRGB's interface down to three straightforward modes: fixed colors with a
+Agile Rgb simplifies OpenRGB's interface down to three straightforward modes: fixed colors with a
 breathing toggle, temperature-reactive lighting (color-coded by configurable CPU/GPU temperature ranges),
-and a classic rainbow/spectrum cycle. Below is an early design mockup of the temperature configuration screen:
+and a classic rainbow/spectrum cycle. A "Pro Mode" button opens the full classic OpenRGB interface
+for advanced per-device/per-zone control. Below are screenshots of the current build:
 
-![Agile Rgb temperature configuration mockup](img/menu.png "Agile Rgb Temperature Configuration Mockup")
+![Agile Rgb temperature configuration screen](img/screenshot-temperature.png "Agile Rgb Temperature Configuration")
 
-*Note: this is a design mockup, not a screenshot of the current build. The UI is under active development.*
+![Agile Rgb fixed color and breathing screen](img/screenshot-fixed-colors.png "Agile Rgb Fixed Color and Breathing")
+
+![Agile Rgb Pro Mode device list](img/screenshot-pro-mode.png "Agile Rgb Pro Mode")
 
 One of the biggest complaints about RGB is the software ecosystem surrounding it.  Every manufacturer has their own app, their own brand, their own style.  If you want to mix and match devices, you end up with a ton of conflicting, functionally identical apps competing for your background resources.  On top of that, these apps are proprietary and Windows-only.  Some even require online accounts.  What if there was a way to control all of your RGB devices from a single app, on Windows, Linux, and MacOS, without any nonsense?  That is what OpenRGB sets out to achieve.  One app to rule them all.
 
