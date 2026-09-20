@@ -1,13 +1,19 @@
-## Agile Rgb
+## ![Agile Rgb](img/logo.png "Agile Rgb Logo")
 
 > **Agile Rgb** is a fork of [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB) by Adam Honse (CalcProgrammer1)
 > and the OpenRGB contributors, licensed under the GNU General Public License v2.0 (see [LICENSE](LICENSE)).
 > All credit for the original device support, protocols, and architecture goes to the OpenRGB project and its
 > contributors. This fork focuses on a simplified, streamlined user interface built on top of that foundation.
 
-## ![OpenRGB](Documentation/Images/OpenRGB.png "OpenRGB Logo")
+## Design Direction
 
-![Pipeline Status](https://gitlab.com/CalcProgrammer1/OpenRGB/badges/master/pipeline.svg)
+Agile Rgb aims to simplify OpenRGB's interface down to three straightforward modes: fixed colors with a
+breathing toggle, temperature-reactive lighting (color-coded by configurable CPU/GPU temperature ranges),
+and a classic rainbow/spectrum cycle. Below is an early design mockup of the temperature configuration screen:
+
+![Agile Rgb temperature configuration mockup](img/menu.png "Agile Rgb Temperature Configuration Mockup")
+
+*Note: this is a design mockup, not a screenshot of the current build. The UI is under active development.*
 
 One of the biggest complaints about RGB is the software ecosystem surrounding it.  Every manufacturer has their own app, their own brand, their own style.  If you want to mix and match devices, you end up with a ton of conflicting, functionally identical apps competing for your background resources.  On top of that, these apps are proprietary and Windows-only.  Some even require online accounts.  What if there was a way to control all of your RGB devices from a single app, on Windows, Linux, and MacOS, without any nonsense?  That is what OpenRGB sets out to achieve.  One app to rule them all.
 

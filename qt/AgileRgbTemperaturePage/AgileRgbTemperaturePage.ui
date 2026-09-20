@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AgileRgbTemperaturePage</class>
+ <widget class="QFrame" name="AgileRgbTemperaturePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="MainLayout">
+   <item>
+    <layout class="QHBoxLayout" name="HeaderLayout">
+     <item>
+      <widget class="QLabel" name="HeaderTitleLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Temperature Configuration</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="HeaderSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="CurrentTempTitleLabel">
+       <property name="text">
+        <string>Current GPU Temperature:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="CurrentTempValueLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>N/A</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="EnableCheckBox">
+     <property name="text">
+      <string>Enable temperature-reactive lighting</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="HintLabel">
+     <property name="text">
+      <string>Default colors are green, yellow, and red. Click a color wheel to change them.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="CardsLayout">
+     <item>
+      <widget class="AgileRgbTemperatureRangeCard" name="LowRangeCard" native="true"/>
+     </item>
+     <item>
+      <widget class="AgileRgbTemperatureRangeCard" name="MediumRangeCard" native="true"/>
+     </item>
+     <item>
+      <widget class="AgileRgbTemperatureRangeCard" name="HighRangeCard" native="true"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="ButtonLayout">
+     <item>
+      <spacer name="ButtonSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="CancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="SaveButton">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AgileRgbTemperatureRangeCard</class>
+   <extends>QWidget</extends>
+   <header location="global">AgileRgbTemperatureRangeCard.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
