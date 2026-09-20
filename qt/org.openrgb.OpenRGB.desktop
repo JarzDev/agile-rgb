@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
 Version=1.5
-Name=OpenRGB
+Name=Agile Rgb
 Comment=Control RGB lighting
 Icon=org.openrgb.OpenRGB
-StartupWMClass=openrgb
-TryExec=openrgb
-Exec=openrgb
+StartupWMClass=agilergb
+TryExec=agilergb
+Exec=agilergb
 Terminal=false
 Categories=Utility;

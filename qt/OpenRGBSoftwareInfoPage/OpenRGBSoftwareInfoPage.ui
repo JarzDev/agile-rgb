@@ -281,7 +281,7 @@
      <item row="0" column="1" colspan="3">
       <widget class="QLabel" name="ProjectDescriptionLabel">
        <property name="text">
-        <string>&lt;b&gt;OpenRGB&lt;/b&gt;, an open-source RGB control utility</string>
+        <string>&lt;b&gt;Agile Rgb&lt;/b&gt;, an open-source RGB control utility (fork of OpenRGB)</string>
        </property>
       </widget>
      </item>
@@ -309,7 +309,7 @@
      <item row="3" column="2">
       <widget class="QLabel" name="CopyrightValue">
        <property name="text">
-        <string>Adam Honse, OpenRGB Team</string>
+        <string>Based on OpenRGB by Adam Honse and the OpenRGB Team</string>
        </property>
       </widget>
      </item>

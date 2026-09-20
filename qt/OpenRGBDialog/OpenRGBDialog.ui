@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>OpenRGB</string>
+   <string>Agile Rgb</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -162,7 +162,7 @@
       <item>
        <widget class="QLabel" name="DetectionProgressLabel">
         <property name="text">
-         <string>OpenRGB is detecting devices...</string>
+         <string>Agile Rgb is detecting devices...</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>

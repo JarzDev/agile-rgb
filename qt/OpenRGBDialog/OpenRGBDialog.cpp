@@ -413,7 +413,7 @@ OpenRGBDialog::OpenRGBDialog(QWidget *parent) : QMainWindow(parent), ui(new Ui::
 
     connect(trayIcon,SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(on_ReShow(QSystemTrayIcon::ActivationReason)));
 
-    trayIcon->setToolTip("OpenRGB");
+    trayIcon->setToolTip("Agile Rgb");
     trayIcon->setContextMenu(trayMenu);
 
     /*-----------------------------------------------------*\
@@ -1918,7 +1918,7 @@ void OpenRGBDialog::onSettingsUpdated()
     std::string     autostart_arguments     = JsonUtils::JsonGetString(autostart_settings, "custom_arguments");
     bool            autostart_enabled       = JsonUtils::JsonGetBool(autostart_settings, "enabled");
     bool            autostart_minimized     = JsonUtils::JsonGetBool(autostart_settings, "start_minimized");
-    AutoStart       auto_start("OpenRGB");
+    AutoStart       auto_start("Agile Rgb");
 
     if(autostart_minimized)
     {
@@ -1931,8 +1931,8 @@ void OpenRGBDialog::onSettingsUpdated()
 
         auto_start_info.args                = autostart_arguments;
         auto_start_info.category            = "Utility;";
-        auto_start_info.desc                = std::string("OpenRGB ") + std::string(VERSION_STRING);
-        auto_start_info.icon                = "OpenRGB";
+        auto_start_info.desc                = std::string("Agile Rgb ") + std::string(VERSION_STRING);
+        auto_start_info.icon                = "Agile Rgb";
         auto_start_info.path                = auto_start.GetExePath();
 
         auto_start.EnableAutoStart(auto_start_info);

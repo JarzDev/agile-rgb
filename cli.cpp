@@ -411,10 +411,10 @@ std::string QuoteIfNecessary(std::string str)
 void OptionHelp()
 {
     std::string help_text;
-    help_text += "OpenRGB ";
+    help_text += "Agile Rgb ";
     help_text += VERSION_STRING;
     help_text += ", an open-source RGB control utility\n";
-    help_text += "Usage: OpenRGB (--device [--mode] [--color])...\n";
+    help_text += "Usage: AgileRgb (--device [--mode] [--color])...\n";
     help_text += "\n";
     help_text += "Options:\n";
     help_text += "--gui                                    Shows the GUI. GUI also appears when not passing any parameters\n";
@@ -453,12 +453,12 @@ void OptionHelp()
     help_text += "--print-source                           Print the source code file and line number for each log entry.\n";
     help_text += "-v,  --verbose                           Print log messages to stdout.\n";
     help_text += "-vv, --very-verbose                      Print debug messages and log messages to stdout.\n";
-    help_text += "--autostart-check                        Check if OpenRGB starting at login is enabled.\n";
-    help_text += "--autostart-disable                      Disable OpenRGB starting at login.\n";
-    help_text += "--autostart-enable arguments             Enable OpenRGB to start at login. Requires arguments to give to OpenRGB at login.\n";
+    help_text += "--autostart-check                        Check if Agile Rgb starting at login is enabled.\n";
+    help_text += "--autostart-disable                      Disable Agile Rgb starting at login.\n";
+    help_text += "--autostart-enable arguments             Enable Agile Rgb to start at login. Requires arguments to give to Agile Rgb at login.\n";
 #ifdef __linux__
-    help_text += "--generate-udev-rules [filename]         Generate the OpenRGB udev rules file and save it to the given filename.\n";
-    help_text += "--print-udev-rules                       Print the OpenRGB udev rules to stdout. Can be redirected to a file. No arguments.\n";
+    help_text += "--generate-udev-rules [filename]         Generate the Agile Rgb udev rules file and save it to the given filename.\n";
+    help_text += "--print-udev-rules                       Print the Agile Rgb udev rules to stdout. Can be redirected to a file. No arguments.\n";
 #endif
 
     std::cout << help_text << std::endl;
@@ -467,7 +467,7 @@ void OptionHelp()
 void OptionVersion()
 {
     std::string version_text;
-    version_text += "OpenRGB ";
+    version_text += "Agile Rgb ";
     version_text += VERSION_STRING;
     version_text += ", for controlling RGB lighting.\n";
     version_text += "  Version:\t\t ";
@@ -1474,7 +1474,7 @@ unsigned int cli_pre_detection(int argc, char* argv[])
                 port_val            = std::stoi(port);
             }
 
-            std::string titleString = "OpenRGB ";
+            std::string titleString = "Agile Rgb ";
             titleString.append(VERSION_STRING);
 
             client->SetIP(ip.c_str());
@@ -1643,7 +1643,7 @@ unsigned int cli_pre_detection(int argc, char* argv[])
         \*-------------------------------------------------*/
         else if(option == "--autostart-check")
         {
-            AutoStart auto_start("OpenRGB");
+            AutoStart auto_start("Agile Rgb");
 
             if(auto_start.IsAutoStartEnabled())
             {
@@ -1660,7 +1660,7 @@ unsigned int cli_pre_detection(int argc, char* argv[])
         \*-------------------------------------------------*/
         else if(option == "--autostart-disable")
         {
-            AutoStart auto_start("OpenRGB");
+            AutoStart auto_start("Agile Rgb");
 
             if(auto_start.DisableAutoStart())
             {
@@ -1679,17 +1679,17 @@ unsigned int cli_pre_detection(int argc, char* argv[])
         {
             if(argument != "")
             {
-                std::string desc                = "OpenRGB ";
+                std::string desc                = "Agile Rgb ";
                 desc                           += VERSION_STRING;
                 desc                           += ", for controlling RGB lighting.";
 
-                AutoStart       auto_start("OpenRGB");
+                AutoStart       auto_start("Agile Rgb");
                 AutoStartInfo   auto_start_interface;
 
                 auto_start_interface.args       = argument;
                 auto_start_interface.category   = "Utility;";
                 auto_start_interface.desc       = desc;
-                auto_start_interface.icon       = "OpenRGB";
+                auto_start_interface.icon       = "Agile Rgb";
                 auto_start_interface.path       = auto_start.GetExePath();
 
                 if(auto_start.EnableAutoStart(auto_start_interface))
@@ -1877,7 +1877,7 @@ unsigned int cli_post_detection()
             break;
 
         case RET_FLAG_PRINT_HELP:
-            std::cout << "Run `OpenRGB --help` for syntax" << std::endl;
+            std::cout << "Run `AgileRgb --help` for syntax" << std::endl;
             exit(-1);
             break;
 

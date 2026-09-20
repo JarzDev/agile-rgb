@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------------------------------#
-# OpenRGB 0.x QMake Project                                                                     #
+# Agile Rgb QMake Project                                                                       #
 #                                                                                               #
-#   Adam Honse (CalcProgrammer1)                        5/25/2020                               #
+#   Fork of OpenRGB (Adam Honse / CalcProgrammer1 and contributors)                             #
 #-----------------------------------------------------------------------------------------------#
 
 #-----------------------------------------------------------------------------------------------#
@@ -55,7 +55,7 @@ VERSION_RPM = $$VERSION_RPM"^"$$SUFFIX
     }
 }
 
-TARGET      = OpenRGB
+TARGET      = AgileRgb
 TEMPLATE    = app
 
 #-----------------------------------------------------------------------------------------------#
@@ -423,6 +423,12 @@ win32:HID_HOTPLUG_ENABLED = "true"
 
 win32:RC_ICONS +=                                                                               \
     qt/OpenRGB.ico
+
+win32:VERSION                     = $$VERSION_NUM
+win32:QMAKE_TARGET_COMPANY        = "Agile Rgb"
+win32:QMAKE_TARGET_PRODUCT        = "Agile Rgb"
+win32:QMAKE_TARGET_DESCRIPTION    = "Agile Rgb - Open source RGB lighting control, based on OpenRGB"
+win32:QMAKE_TARGET_COPYRIGHT      = "GPL v2, see LICENSE. Based on OpenRGB by the OpenRGB contributors."
 
 win32:DISTFILES += \
     dependencies/PawnIO/modules/SmbusPIIX4.bin                                                  \

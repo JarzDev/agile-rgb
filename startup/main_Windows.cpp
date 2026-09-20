@@ -34,7 +34,7 @@ static int common_main(int argc, char* argv[]);
 static void WINAPI ServiceMain(DWORD dwArgc, LPTSTR *lpszArgv);
 static void ReportServiceStatus(DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint);
 
-static char                  service_name[]             = "OpenRGB";
+static char                  service_name[]             = "AgileRgb";
 static SERVICE_TABLE_ENTRY   service_dispatch_table[]   = { { service_name, ServiceMain }, { NULL, NULL } };
 static DWORD                 service_checkpoint         = 1;
 static SERVICE_STATUS_HANDLE service_status_handle;

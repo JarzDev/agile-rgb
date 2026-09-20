@@ -1,3 +1,10 @@
+## Agile Rgb
+
+> **Agile Rgb** is a fork of [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB) by Adam Honse (CalcProgrammer1)
+> and the OpenRGB contributors, licensed under the GNU General Public License v2.0 (see [LICENSE](LICENSE)).
+> All credit for the original device support, protocols, and architecture goes to the OpenRGB project and its
+> contributors. This fork focuses on a simplified, streamlined user interface built on top of that foundation.
+
 ## ![OpenRGB](Documentation/Images/OpenRGB.png "OpenRGB Logo")
 
 ![Pipeline Status](https://gitlab.com/CalcProgrammer1/OpenRGB/badges/master/pipeline.svg)
