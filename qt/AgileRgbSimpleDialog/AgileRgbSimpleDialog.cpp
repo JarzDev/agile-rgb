@@ -13,6 +13,10 @@
 #include "AgileRgbSimpleDialog.h"
 #include "ui_AgileRgbSimpleDialog.h"
 
+#include "AgileRgbFixedColorPage.h"
+#include "AgileRgbTemperaturePage.h"
+#include "AgileRgbRainbowPage.h"
+
 AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AgileRgbSimpleDialog)
@@ -25,6 +29,13 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     | clicks "Pro Mode"                                    |
     \*-------------------------------------------------*/
     pro_dialog = new OpenRGBDialog(nullptr);
+
+    /*-------------------------------------------------*\
+    | Only the tab that is actually visible should drive  |
+    | the lighting; otherwise all three tabs would apply   |
+    | their effect at once and fight over the same devices |
+    \*-------------------------------------------------*/
+    on_SimpleTabBar_currentChanged(ui->SimpleTabBar->currentIndex());
 }
 
 AgileRgbSimpleDialog::~AgileRgbSimpleDialog()
@@ -42,4 +53,11 @@ void AgileRgbSimpleDialog::on_ProModeButton_clicked()
     pro_dialog->show();
     pro_dialog->raise();
     pro_dialog->activateWindow();
+}
+
+void AgileRgbSimpleDialog::on_SimpleTabBar_currentChanged(int index)
+{
+    ui->FixedColorTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->FixedColorTab));
+    ui->TemperatureTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->TemperatureTab));
+    ui->RainbowTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->RainbowTab));
 }

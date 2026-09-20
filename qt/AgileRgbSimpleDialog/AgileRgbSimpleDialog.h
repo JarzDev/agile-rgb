@@ -38,6 +38,7 @@ public:
 
 private slots:
     void        on_ProModeButton_clicked();
+    void        on_SimpleTabBar_currentChanged(int index);
 
 private:
     Ui::AgileRgbSimpleDialog*  ui;

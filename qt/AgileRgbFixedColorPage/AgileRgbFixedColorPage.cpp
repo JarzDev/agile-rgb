@@ -21,13 +21,23 @@ AgileRgbFixedColorPage::AgileRgbFixedColorPage(QWidget *parent) :
     lighting = new AgileRgbLightingHelper(this);
 
     ui->ColorWheelBox->setColor(QColor(0, 255, 0));
-
-    Apply();
 }
 
 AgileRgbFixedColorPage::~AgileRgbFixedColorPage()
 {
     delete ui;
+}
+
+void AgileRgbFixedColorPage::SetPageActive(bool active)
+{
+    if(active)
+    {
+        Apply();
+    }
+    else
+    {
+        lighting->Stop();
+    }
 }
 
 void AgileRgbFixedColorPage::Apply()
@@ -47,17 +57,14 @@ void AgileRgbFixedColorPage::Apply()
 
 void AgileRgbFixedColorPage::on_ColorWheelBox_colorChanged(const QColor /*color*/)
 {
-    Apply();
 }
 
 void AgileRgbFixedColorPage::on_BrightnessSlider_valueChanged(int /*value*/)
 {
-    Apply();
 }
 
 void AgileRgbFixedColorPage::on_BreathingToggle_toggled(bool /*checked*/)
 {
-    Apply();
 }
 
 void AgileRgbFixedColorPage::on_SwatchBox_swatchChanged(const QColor color)
@@ -65,6 +72,9 @@ void AgileRgbFixedColorPage::on_SwatchBox_swatchChanged(const QColor color)
     ui->ColorWheelBox->blockSignals(true);
     ui->ColorWheelBox->setColor(color);
     ui->ColorWheelBox->blockSignals(false);
+}
 
+void AgileRgbFixedColorPage::on_ApplyButton_clicked()
+{
     Apply();
 }

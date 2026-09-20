@@ -19,13 +19,23 @@ AgileRgbRainbowPage::AgileRgbRainbowPage(QWidget *parent) :
 
     lighting      = new AgileRgbLightingHelper(this);
     left_to_right = true;
-
-    Apply();
 }
 
 AgileRgbRainbowPage::~AgileRgbRainbowPage()
 {
     delete ui;
+}
+
+void AgileRgbRainbowPage::SetPageActive(bool active)
+{
+    if(active)
+    {
+        Apply();
+    }
+    else
+    {
+        lighting->Stop();
+    }
 }
 
 void AgileRgbRainbowPage::Apply()
@@ -37,7 +47,6 @@ void AgileRgbRainbowPage::Apply()
 
 void AgileRgbRainbowPage::on_SpeedSlider_valueChanged(int /*value*/)
 {
-    Apply();
 }
 
 void AgileRgbRainbowPage::on_LeftToRightButton_clicked()
@@ -46,8 +55,6 @@ void AgileRgbRainbowPage::on_LeftToRightButton_clicked()
 
     ui->LeftToRightButton->setChecked(true);
     ui->RightToLeftButton->setChecked(false);
-
-    Apply();
 }
 
 void AgileRgbRainbowPage::on_RightToLeftButton_clicked()
@@ -56,6 +63,9 @@ void AgileRgbRainbowPage::on_RightToLeftButton_clicked()
 
     ui->LeftToRightButton->setChecked(false);
     ui->RightToLeftButton->setChecked(true);
+}
 
+void AgileRgbRainbowPage::on_ApplyButton_clicked()
+{
     Apply();
 }

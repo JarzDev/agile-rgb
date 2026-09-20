@@ -29,11 +29,20 @@ public:
     explicit AgileRgbFixedColorPage(QWidget *parent = nullptr);
     ~AgileRgbFixedColorPage();
 
+    /*-----------------------------------------------------*\
+    | Called by the containing window when this tab becomes  |
+    | active/inactive, so only the visible tab drives the     |
+    | lighting (prevents tabs from fighting over the same      |
+    | devices)                                                 |
+    \*-----------------------------------------------------*/
+    void        SetPageActive(bool active);
+
 private slots:
     void        on_ColorWheelBox_colorChanged(const QColor color);
     void        on_BrightnessSlider_valueChanged(int value);
     void        on_BreathingToggle_toggled(bool checked);
     void        on_SwatchBox_swatchChanged(const QColor color);
+    void        on_ApplyButton_clicked();
 
 private:
     Ui::AgileRgbFixedColorPage* ui;

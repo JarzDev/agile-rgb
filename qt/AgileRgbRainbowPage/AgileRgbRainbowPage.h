@@ -27,10 +27,19 @@ public:
     explicit AgileRgbRainbowPage(QWidget *parent = nullptr);
     ~AgileRgbRainbowPage();
 
+    /*-----------------------------------------------------*\
+    | Called by the containing window when this tab becomes  |
+    | active/inactive, so only the visible tab drives the     |
+    | lighting (prevents tabs from fighting over the same      |
+    | devices)                                                 |
+    \*-----------------------------------------------------*/
+    void        SetPageActive(bool active);
+
 private slots:
     void        on_SpeedSlider_valueChanged(int value);
     void        on_LeftToRightButton_clicked();
     void        on_RightToLeftButton_clicked();
+    void        on_ApplyButton_clicked();
 
 private:
     Ui::AgileRgbRainbowPage*    ui;

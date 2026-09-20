@@ -36,7 +36,6 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
 
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &AgileRgbTemperaturePage::UpdateCurrentTemperature);
-    poll_timer->start(2000);
 
     UpdateCurrentTemperature();
 }
@@ -44,6 +43,19 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
 AgileRgbTemperaturePage::~AgileRgbTemperaturePage()
 {
     delete ui;
+}
+
+void AgileRgbTemperaturePage::SetPageActive(bool active)
+{
+    if(active)
+    {
+        poll_timer->start(2000);
+        UpdateCurrentTemperature();
+    }
+    else
+    {
+        poll_timer->stop();
+    }
 }
 
 void AgileRgbTemperaturePage::LoadSettings()

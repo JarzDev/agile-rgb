@@ -31,6 +31,14 @@ public:
     explicit AgileRgbTemperaturePage(QWidget *parent = nullptr);
     ~AgileRgbTemperaturePage();
 
+    /*-----------------------------------------------------*\
+    | Called by the containing window when this tab becomes  |
+    | active/inactive, so only the visible tab drives the     |
+    | lighting (prevents tabs from fighting over the same      |
+    | devices)                                                 |
+    \*-----------------------------------------------------*/
+    void        SetPageActive(bool active);
+
 public slots:
     void        UpdateCurrentTemperature();
 
