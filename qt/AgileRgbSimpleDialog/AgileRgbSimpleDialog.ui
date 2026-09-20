@@ -56,7 +56,7 @@
       <item>
        <widget class="QPushButton" name="ScanDevicesButton">
         <property name="text">
-         <string>Scan Devices</string>
+         <string>All Devices</string>
         </property>
        </widget>
       </item>

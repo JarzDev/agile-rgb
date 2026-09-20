@@ -114,6 +114,7 @@ void AgileRgbLightingHelper::ApplyStaticColor(const QColor& color, unsigned int 
     {
         EnsureDirectMode(controller);
         controller->SetAllColors(target_color);
+        controller->UpdateLEDs();
     }
 }
 
@@ -199,6 +200,7 @@ void AgileRgbLightingHelper::OnBreathingTick()
     for(RGBController* controller : software_fallback_controllers)
     {
         controller->SetAllColors(target_color);
+        controller->UpdateLEDs();
     }
 }
 
@@ -286,6 +288,7 @@ void AgileRgbLightingHelper::OnRainbowTick()
     for(RGBController* controller : software_fallback_controllers)
     {
         controller->SetAllColors(target_color);
+        controller->UpdateLEDs();
     }
 }
 

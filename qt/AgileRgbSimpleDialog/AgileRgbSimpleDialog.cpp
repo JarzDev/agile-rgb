@@ -106,7 +106,14 @@ void AgileRgbSimpleDialog::on_ScanDevicesButton_clicked()
         QMetaObject::invokeMethod(this_dialog, [this_dialog]()
         {
             this_dialog->ui->ScanDevicesButton->setEnabled(true);
-            this_dialog->ui->ScanDevicesButton->setText(tr("Scan Devices"));
+            this_dialog->ui->ScanDevicesButton->setText(tr("All Devices"));
+
+            /*-----------------------------------------------*\
+            | Newly-detected devices won't have the current    |
+            | tab's effect applied to them yet; re-trigger the  |
+            | active tab so they pick it up immediately          |
+            \*-----------------------------------------------*/
+            this_dialog->on_SimpleTabBar_currentChanged(this_dialog->ui->SimpleTabBar->currentIndex());
         }, Qt::QueuedConnection);
     });
     rescan_thread.detach();

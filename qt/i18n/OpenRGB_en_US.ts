@@ -72,7 +72,7 @@
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="109"/>
-        <source>Scan Devices</source>
+        <source>All Devices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -125,7 +125,7 @@
     </message>
     <message>
         <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="153"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="188"/>
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>
@@ -153,17 +153,17 @@
 <context>
     <name>AgileRgbTemperatureRangeCard</name>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="28"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="40"/>
         <source>Temperature Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="37"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="51"/>
         <source>Above (°C):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="54"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="72"/>
         <source>Up to (°C):</source>
         <translation type="unfinished"></translation>
     </message>

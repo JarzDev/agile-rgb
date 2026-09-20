@@ -70,10 +70,14 @@
         <translation>Agile RGB</translation>
     </message>
     <message>
+        <source>Scan Devices</source>
+        <translation type="vanished">Escanear dispositivos</translation>
+    </message>
+    <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="109"/>
-        <source>Scan Devices</source>
-        <translation>Escanear dispositivos</translation>
+        <source>All Devices</source>
+        <translation>Todos los dispositivos</translation>
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="67"/>
@@ -125,7 +129,7 @@
     </message>
     <message>
         <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="153"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="188"/>
         <source>N/A</source>
         <translation>N/D</translation>
     </message>
@@ -153,17 +157,17 @@
 <context>
     <name>AgileRgbTemperatureRangeCard</name>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="28"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="40"/>
         <source>Temperature Range</source>
         <translation>Rango de temperatura</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="37"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="51"/>
         <source>Above (°C):</source>
         <translation>Sobre (°C):</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="54"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="72"/>
         <source>Up to (°C):</source>
         <translation>Hasta (°C):</translation>
     </message>
