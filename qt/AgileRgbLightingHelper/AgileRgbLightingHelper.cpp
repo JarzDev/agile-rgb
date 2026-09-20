@@ -65,6 +65,35 @@ int AgileRgbLightingHelper::FindModeByName(RGBController* controller, const char
     return -1;
 }
 
+void AgileRgbLightingHelper::EnsureDirectMode(RGBController* controller)
+{
+    int direct_mode = FindModeByName(controller, "direct");
+
+    if(direct_mode < 0)
+    {
+        direct_mode = FindModeByName(controller, "custom");
+    }
+
+    if(direct_mode < 0)
+    {
+        direct_mode = FindModeByName(controller, "static");
+    }
+
+    if(direct_mode < 0)
+    {
+        return;
+    }
+
+    unsigned int flags = controller->GetModeFlags((unsigned int)direct_mode);
+
+    if(flags & MODE_FLAG_HAS_BRIGHTNESS)
+    {
+        controller->SetModeBrightness((unsigned int)direct_mode, controller->GetModeBrightnessMax((unsigned int)direct_mode));
+    }
+
+    controller->SetActiveMode(direct_mode);
+}
+
 void AgileRgbLightingHelper::ApplyStaticColor(const QColor& color, unsigned int brightness_percent)
 {
     StopSoftwareTimer();
@@ -83,18 +112,7 @@ void AgileRgbLightingHelper::ApplyStaticColor(const QColor& color, unsigned int 
 
     for(RGBController* controller : controllers)
     {
-        int direct_mode = FindModeByName(controller, "direct");
-
-        if(direct_mode < 0)
-        {
-            direct_mode = FindModeByName(controller, "static");
-        }
-
-        if(direct_mode >= 0)
-        {
-            controller->SetActiveMode(direct_mode);
-        }
-
+        EnsureDirectMode(controller);
         controller->SetAllColors(target_color);
     }
 }
@@ -106,7 +124,7 @@ void AgileRgbLightingHelper::StartBreathing(const QColor& color, unsigned int sp
     breathing_color = color;
 
     std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
-    std::vector<RGBController*>  software_fallback_controllers;
+    software_fallback_controllers.clear();
 
     for(RGBController* controller : controllers)
     {
@@ -143,7 +161,15 @@ void AgileRgbLightingHelper::StartBreathing(const QColor& color, unsigned int sp
         /*-------------------------------------------------*\
         | Software fallback: pulse brightness via a sine wave |
         | Speed 0-100% maps roughly to a 6s..1s breath cycle  |
+        | Devices need to be switched to their Direct/Custom   |
+        | mode first, or their firmware ignores the colors we  |
+        | send it (e.g. a device left in "Off" mode)            |
         \*-------------------------------------------------*/
+        for(RGBController* controller : software_fallback_controllers)
+        {
+            EnsureDirectMode(controller);
+        }
+
         phase = 0.0;
 
         double cycle_seconds  = 6.0 - (5.0 * (speed_percent / 100.0));
@@ -170,14 +196,9 @@ void AgileRgbLightingHelper::OnBreathingTick()
 
     RGBColor target_color = ToRGBColor(scaled.red(), scaled.green(), scaled.blue());
 
-    std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
-
-    for(RGBController* controller : controllers)
+    for(RGBController* controller : software_fallback_controllers)
     {
-        if(FindModeByName(controller, "breathing") < 0)
-        {
-            controller->SetAllColors(target_color);
-        }
+        controller->SetAllColors(target_color);
     }
 }
 
@@ -188,7 +209,7 @@ void AgileRgbLightingHelper::StartRainbow(unsigned int speed_percent, bool left_
     rainbow_left_to_right = left_to_right;
 
     std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
-    std::vector<RGBController*>  software_fallback_controllers;
+    software_fallback_controllers.clear();
 
     for(RGBController* controller : controllers)
     {
@@ -227,6 +248,16 @@ void AgileRgbLightingHelper::StartRainbow(unsigned int speed_percent, bool left_
 
     if(!software_fallback_controllers.empty())
     {
+        /*-------------------------------------------------*\
+        | Devices need to be switched to their Direct/Custom   |
+        | mode first, or their firmware ignores the colors we  |
+        | send it (e.g. a device left in "Off" mode)            |
+        \*-------------------------------------------------*/
+        for(RGBController* controller : software_fallback_controllers)
+        {
+            EnsureDirectMode(controller);
+        }
+
         phase = 0.0;
 
         /*-------------------------------------------------*\
@@ -252,17 +283,9 @@ void AgileRgbLightingHelper::OnRainbowTick()
     QColor color = QColor::fromHsv((int)phase, 255, 255);
     RGBColor target_color = ToRGBColor(color.red(), color.green(), color.blue());
 
-    std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
-
-    for(RGBController* controller : controllers)
+    for(RGBController* controller : software_fallback_controllers)
     {
-        int rainbow_mode = FindModeByName(controller, "spectrum cycle");
-        if(rainbow_mode < 0) rainbow_mode = FindModeByName(controller, "rainbow");
-
-        if(rainbow_mode < 0)
-        {
-            controller->SetAllColors(target_color);
-        }
+        controller->SetAllColors(target_color);
     }
 }
 

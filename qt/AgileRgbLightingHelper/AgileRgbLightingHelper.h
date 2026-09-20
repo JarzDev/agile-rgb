@@ -64,10 +64,25 @@ private:
     bool                            rainbow_left_to_right;
 
     /*-----------------------------------------------------*\
+    | Controllers currently driven by the software timer      |
+    | (i.e. that have no matching native mode)                 |
+    \*-----------------------------------------------------*/
+    std::vector<RGBController*>    software_fallback_controllers;
+
+    /*-----------------------------------------------------*\
     | Returns the index of a mode whose name contains         |
     | needle (case-insensitive), or -1 if none match          |
     \*-----------------------------------------------------*/
     int         FindModeByName(RGBController* controller, const char* needle);
+
+    /*-----------------------------------------------------*\
+    | Switches a controller to its "Direct"/"Custom" mode     |
+    | (and turns its brightness up if the mode supports it),  |
+    | so that a subsequent SetAllColors() call actually shows  |
+    | up instead of being ignored by whatever mode (often      |
+    | "Off") the device was previously in                      |
+    \*-----------------------------------------------------*/
+    void        EnsureDirectMode(RGBController* controller);
 
     void        StopSoftwareTimer();
 };

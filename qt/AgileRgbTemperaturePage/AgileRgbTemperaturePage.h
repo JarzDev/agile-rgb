@@ -16,6 +16,8 @@
 #include <QTimer>
 #include <nlohmann/json.hpp>
 
+#include "AgileRgbLightingHelper.h"
+
 using json = nlohmann::json;
 
 namespace Ui
@@ -53,6 +55,7 @@ private slots:
 private:
     Ui::AgileRgbTemperaturePage*   ui;
     QTimer*                        poll_timer;
+    AgileRgbLightingHelper*        lighting;
 
     void        LoadSettings();
     void        SaveSettings();

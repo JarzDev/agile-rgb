@@ -28,6 +28,8 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    lighting = new AgileRgbLightingHelper(this);
+
     ui->LowRangeCard->SetRangeKind(TemperatureRangeKind::LOW);
     ui->MediumRangeCard->SetRangeKind(TemperatureRangeKind::MEDIUM);
     ui->HighRangeCard->SetRangeKind(TemperatureRangeKind::HIGH);
@@ -177,12 +179,5 @@ void AgileRgbTemperaturePage::ApplyColorForTemperature(int celsius)
         selected_color = ui->HighRangeCard->GetColor();
     }
 
-    RGBColor target_color = ToRGBColor(selected_color.red(), selected_color.green(), selected_color.blue());
-
-    std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
-
-    for(RGBController* controller : controllers)
-    {
-        controller->SetAllColors(target_color);
-    }
+    lighting->ApplyStaticColor(selected_color, 100);
 }
