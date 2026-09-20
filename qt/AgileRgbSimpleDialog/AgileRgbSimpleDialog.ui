@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AgileRgbSimpleDialog</class>
+ <widget class="QMainWindow" name="AgileRgbSimpleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>820</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Agile Rgb</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="MainLayout">
+    <item>
+     <layout class="QHBoxLayout" name="HeaderLayout">
+      <item>
+       <widget class="QLabel" name="LogoLabel">
+        <property name="pixmap">
+         <pixmap resource="../resources.qrc">:/org.openrgb.OpenRGB.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="TitleLabel">
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Agile RGB</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="HeaderSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ProModeButton">
+        <property name="text">
+         <string>Pro Mode</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="SimpleTabBar">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="AgileRgbFixedColorPage" name="FixedColorTab" native="true">
+       <attribute name="title">
+        <string>Fixed Colors &amp; Breathing</string>
+       </attribute>
+      </widget>
+      <widget class="AgileRgbTemperaturePage" name="TemperatureTab" native="true">
+       <attribute name="title">
+        <string>Temperature</string>
+       </attribute>
+      </widget>
+      <widget class="AgileRgbRainbowPage" name="RainbowTab" native="true">
+       <attribute name="title">
+        <string>Rainbow</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AgileRgbFixedColorPage</class>
+   <extends>QWidget</extends>
+   <header location="global">AgileRgbFixedColorPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AgileRgbTemperaturePage</class>
+   <extends>QWidget</extends>
+   <header location="global">AgileRgbTemperaturePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AgileRgbRainbowPage</class>
+   <extends>QWidget</extends>
+   <header location="global">AgileRgbRainbowPage.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

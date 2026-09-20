@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AgileRgbFixedColorPage</class>
+ <widget class="QFrame" name="AgileRgbFixedColorPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="TitleLabel">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fixed Color &amp; Breathing</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="ColorWheel" name="ColorWheelBox" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>220</width>
+       <height>220</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Swatches" name="SwatchBox" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="BrightnessLabel">
+     <property name="text">
+      <string>Brightness</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="BrightnessSlider">
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>100</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="BreathingLayout">
+     <item>
+      <widget class="QLabel" name="BreathingLabel">
+       <property name="text">
+        <string>Breathing</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="BreathingSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="BreathingToggle">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="BottomSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ColorWheel</class>
+   <extends>QWidget</extends>
+   <header location="global">ColorWheel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Swatches</class>
+   <extends>QWidget</extends>
+   <header location="global">swatches.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -15,6 +15,7 @@
 #include <QApplication>
 
 #include "OpenRGBDialog.h"
+#include "AgileRgbSimpleDialog.h"
 
 #ifdef __APPLE__
 #include "macutils.h"
@@ -93,15 +94,15 @@ int startup(int argc, char* argv[], unsigned int ret_flags)
         /*-------------------------------------------------*\
         | Main UI widget                                    |
         \*-------------------------------------------------*/
-        OpenRGBDialog dlg;
+        AgileRgbSimpleDialog dlg;
         LOG_TRACE("[startup] Dialog created");
 
         if(ret_flags & RET_FLAG_I2C_TOOLS)
         {
-            dlg.AddI2CToolsPage();
+            dlg.GetProDialog()->AddI2CToolsPage();
         }
 
-        dlg.AddClientTab();
+        dlg.GetProDialog()->AddClientTab();
 
         if(ret_flags & RET_FLAG_START_MINIMIZED)
         {
