@@ -125,3 +125,6 @@ compile_commands.json
 
 # Local Salesforce CLI config (unrelated to this project)
 .sf/
+
+# Claude Code local session metadata
+.claude/

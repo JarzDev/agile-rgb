@@ -361,6 +361,7 @@ win32:SOURCES +=                                                                
     scsiapi/scsiapi_windows.c                                                                   \
     serial_port/find_usb_serial_port_win.cpp                                                    \
     SuspendResume/SuspendResume_Windows.cpp                                                     \
+    TemperatureMonitor.cpp                                                                      \
     wmi/wmi.cpp                                                                                 \
     AutoStart/AutoStart-Windows.cpp                                                             \
     startup/main_Windows.cpp                                                                    \
@@ -376,6 +377,7 @@ win32:HEADERS +=                                                                
     i2c_smbus/Windows/i2c_smbus_amdadl.h                                                        \
     i2c_smbus/Windows/i2c_smbus_nvapi.h                                                         \
     i2c_smbus/Windows/i2c_smbus_pawnio.h                                                        \
+    TemperatureMonitor.h                                                                        \
     wmi/wmi.h                                                                                   \
     AutoStart/AutoStart-Windows.h                                                               \
     SuspendResume/SuspendResume_Windows.h                                                       \
