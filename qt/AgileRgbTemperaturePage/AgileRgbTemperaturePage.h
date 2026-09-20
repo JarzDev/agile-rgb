@@ -51,6 +51,8 @@ private slots:
     void        on_SaveButton_clicked();
     void        on_CancelButton_clicked();
     void        on_EnableCheckBox_toggled(bool checked);
+    void        on_LowRangeChanged();
+    void        on_MediumRangeChanged();
 
 private:
     Ui::AgileRgbTemperaturePage*   ui;
@@ -60,4 +62,12 @@ private:
     void        LoadSettings();
     void        SaveSettings();
     void        ApplyColorForTemperature(int celsius);
+
+    /*-----------------------------------------------------*\
+    | Keeps the three ranges contiguous and non-overlapping: |
+    | Medium.min is always Low.max + 1, and High.min is       |
+    | always Medium.max + 1                                    |
+    \*-----------------------------------------------------*/
+    void        SyncMediumMinToLowMax();
+    void        SyncHighMinToMediumMax();
 };

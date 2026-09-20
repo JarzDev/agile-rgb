@@ -54,6 +54,13 @@
        </spacer>
       </item>
       <item>
+       <widget class="QPushButton" name="ScanDevicesButton">
+        <property name="text">
+         <string>Scan Devices</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QComboBox" name="LanguageBox">
         <item>
          <property name="text">

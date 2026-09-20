@@ -71,23 +71,44 @@
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="109"/>
+        <source>Scan Devices</source>
+        <translation>Escanear dispositivos</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="67"/>
+        <source>English</source>
+        <translation>English</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="72"/>
+        <source>Español</source>
+        <translation>Español</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="80"/>
         <source>Pro Mode</source>
         <translation>Modo Pro</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="72"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="93"/>
         <source>Fixed Colors &amp; Breathing</source>
         <translation>Colores fijos y respiración</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="77"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="98"/>
         <source>Temperature</source>
         <translation>Temperatura</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="82"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="103"/>
         <source>Rainbow</source>
         <translation>Arcoíris</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="98"/>
+        <source>Scanning...</source>
+        <translation>Escaneando...</translation>
     </message>
 </context>
 <context>
@@ -104,7 +125,7 @@
     </message>
     <message>
         <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="132"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="153"/>
         <source>N/A</source>
         <translation>N/D</translation>
     </message>
@@ -147,17 +168,17 @@
         <translation>Hasta (°C):</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="37"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="48"/>
         <source>Low Temperature</source>
         <translation>Temperatura baja</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="41"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="52"/>
         <source>Medium Temperature</source>
         <translation>Temperatura media</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="45"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="56"/>
         <source>High Temperature (Alert)</source>
         <translation>Temperatura alta (alerta)</translation>
     </message>
@@ -2165,7 +2186,7 @@
     <message>
         <location filename="../../ResourceManager.cpp" line="285"/>
         <source>A list of hashes of dialog text that should not be shown.  Selecting &quot;Do Not Show Again&quot; on a dialog adds it to this list.</source>
-        <translation>Una lista de hashes de textos de diálogo que no deben mostrarse. Seleccionar "No volver a mostrar" en un diálogo lo añade a esta lista.</translation>
+        <translation>Una lista de hashes de textos de diálogo que no deben mostrarse. Seleccionar &quot;No volver a mostrar&quot; en un diálogo lo añade a esta lista.</translation>
     </message>
     <message>
         <location filename="../../ResourceManager.cpp" line="289"/>

@@ -23,6 +23,9 @@
 #include <QFile>
 #include <QTextStream>
 #include <QApplication>
+#include <QMetaObject>
+
+#include <thread>
 
 using json = nlohmann::json;
 
@@ -87,6 +90,26 @@ void AgileRgbSimpleDialog::on_ProModeButton_clicked()
     pro_dialog->show();
     pro_dialog->raise();
     pro_dialog->activateWindow();
+}
+
+void AgileRgbSimpleDialog::on_ScanDevicesButton_clicked()
+{
+    ui->ScanDevicesButton->setEnabled(false);
+    ui->ScanDevicesButton->setText(tr("Scanning..."));
+
+    AgileRgbSimpleDialog* this_dialog = this;
+
+    std::thread rescan_thread([this_dialog]()
+    {
+        ResourceManager::get()->RescanDevices();
+
+        QMetaObject::invokeMethod(this_dialog, [this_dialog]()
+        {
+            this_dialog->ui->ScanDevicesButton->setEnabled(true);
+            this_dialog->ui->ScanDevicesButton->setText(tr("Scan Devices"));
+        }, Qt::QueuedConnection);
+    });
+    rescan_thread.detach();
 }
 
 void AgileRgbSimpleDialog::on_SimpleTabBar_currentChanged(int index)

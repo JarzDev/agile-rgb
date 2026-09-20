@@ -71,22 +71,43 @@
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
-        <source>Pro Mode</source>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="109"/>
+        <source>Scan Devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="67"/>
+        <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="72"/>
+        <source>Español</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="80"/>
+        <source>Pro Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="93"/>
         <source>Fixed Colors &amp; Breathing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="77"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="98"/>
         <source>Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="82"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="103"/>
         <source>Rainbow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="98"/>
+        <source>Scanning...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -104,7 +125,7 @@
     </message>
     <message>
         <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="132"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="153"/>
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>
@@ -147,17 +168,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="37"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="48"/>
         <source>Low Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="41"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="52"/>
         <source>Medium Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="45"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="56"/>
         <source>High Temperature (Alert)</source>
         <translation type="unfinished"></translation>
     </message>

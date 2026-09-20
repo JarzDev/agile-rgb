@@ -34,6 +34,14 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
     ui->MediumRangeCard->SetRangeKind(TemperatureRangeKind::MEDIUM);
     ui->HighRangeCard->SetRangeKind(TemperatureRangeKind::HIGH);
 
+    /*-------------------------------------------------*\
+    | Keep the three ranges contiguous: changing one      |
+    | range's boundary pushes the neighbor's boundary to   |
+    | stay exactly adjacent (no gaps, no overlaps)          |
+    \*-------------------------------------------------*/
+    connect(ui->LowRangeCard,    &AgileRgbTemperatureRangeCard::RangeChanged, this, &AgileRgbTemperaturePage::on_LowRangeChanged);
+    connect(ui->MediumRangeCard, &AgileRgbTemperatureRangeCard::RangeChanged, this, &AgileRgbTemperaturePage::on_MediumRangeChanged);
+
     LoadSettings();
 
     poll_timer = new QTimer(this);
@@ -142,6 +150,33 @@ void AgileRgbTemperaturePage::on_CancelButton_clicked()
 void AgileRgbTemperaturePage::on_EnableCheckBox_toggled(bool /*checked*/)
 {
     SaveSettings();
+}
+
+void AgileRgbTemperaturePage::SyncMediumMinToLowMax()
+{
+    ui->MediumRangeCard->SetMinTemperature(ui->LowRangeCard->GetMaxTemperature() + 1);
+
+    /*---------------------------------------------------*\
+    | Medium's min may have just pushed its own max up      |
+    | (SetMinTemperature keeps min <= max internally), so    |
+    | High's min needs to stay in sync with Medium's max too |
+    \*---------------------------------------------------*/
+    SyncHighMinToMediumMax();
+}
+
+void AgileRgbTemperaturePage::SyncHighMinToMediumMax()
+{
+    ui->HighRangeCard->SetMinTemperature(ui->MediumRangeCard->GetMaxTemperature() + 1);
+}
+
+void AgileRgbTemperaturePage::on_LowRangeChanged()
+{
+    SyncMediumMinToLowMax();
+}
+
+void AgileRgbTemperaturePage::on_MediumRangeChanged()
+{
+    SyncHighMinToMediumMax();
 }
 
 void AgileRgbTemperaturePage::UpdateCurrentTemperature()

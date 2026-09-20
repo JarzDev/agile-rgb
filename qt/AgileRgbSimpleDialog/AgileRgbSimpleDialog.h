@@ -42,6 +42,7 @@ protected:
 
 private slots:
     void        on_ProModeButton_clicked();
+    void        on_ScanDevicesButton_clicked();
     void        on_SimpleTabBar_currentChanged(int index);
     void        on_LanguageBox_currentIndexChanged(int index);
 

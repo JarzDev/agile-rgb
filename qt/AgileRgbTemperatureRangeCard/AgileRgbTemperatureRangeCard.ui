@@ -10,6 +10,18 @@
     <height>360</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>260</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>260</width>
+    <height>16777215</height>
+   </size>
+  </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
   </property>
@@ -30,40 +42,48 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="ThresholdLayout">
+    <layout class="QVBoxLayout" name="ThresholdLayout">
      <item>
-      <widget class="QLabel" name="MinTempLabel">
-       <property name="text">
-        <string>Above (°C):</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="MinTempLayout">
+       <item>
+        <widget class="QLabel" name="MinTempLabel">
+         <property name="text">
+          <string>Above (°C):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="MinTempSpinBox">
+         <property name="minimum">
+          <number>-20</number>
+         </property>
+         <property name="maximum">
+          <number>150</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QSpinBox" name="MinTempSpinBox">
-       <property name="minimum">
-        <number>-20</number>
-       </property>
-       <property name="maximum">
-        <number>150</number>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="MaxTempLabel">
-       <property name="text">
-        <string>Up to (°C):</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="MaxTempSpinBox">
-       <property name="minimum">
-        <number>-20</number>
-       </property>
-       <property name="maximum">
-        <number>150</number>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="MaxTempLayout">
+       <item>
+        <widget class="QLabel" name="MaxTempLabel">
+         <property name="text">
+          <string>Up to (°C):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="MaxTempSpinBox">
+         <property name="minimum">
+          <number>-20</number>
+         </property>
+         <property name="maximum">
+          <number>150</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
