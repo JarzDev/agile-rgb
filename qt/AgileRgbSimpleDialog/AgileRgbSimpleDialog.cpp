@@ -16,6 +16,7 @@
 #include "AgileRgbFixedColorPage.h"
 #include "AgileRgbTemperaturePage.h"
 #include "AgileRgbRainbowPage.h"
+#include "OpenRGBZoneInitializationDialog.h"
 
 #include "ResourceManager.h"
 #include "SettingsManager.h"
@@ -93,56 +94,6 @@ void AgileRgbSimpleDialog::on_ProModeButton_clicked()
     pro_dialog->activateWindow();
 }
 
-/*-----------------------------------------------------*\
-| Some devices (typically ARGB fan/strip headers wired    |
-| through a motherboard or hub) can't report how many      |
-| LEDs are actually connected, so OpenRGB leaves their      |
-| zone size at whatever was last configured -- often just   |
-| 1 LED if it was never set. Push every manually            |
-| configurable zone up to its maximum reported size, so     |
-| "All Devices" lights up the whole strip instead of just    |
-| the first LED.                                             |
-\*-----------------------------------------------------*/
-static void MaximizeManuallyConfigurableZones()
-{
-    std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
-    bool                          resized_any = false;
-
-    for(RGBController* controller : controllers)
-    {
-        for(unsigned int zone_index = 0; zone_index < controller->GetZoneCount(); zone_index++)
-        {
-            unsigned int flags = controller->GetZoneFlags(zone_index);
-
-            bool configurable = (flags & (ZONE_FLAG_MANUALLY_CONFIGURABLE_SIZE | ZONE_FLAG_MANUALLY_CONFIGURABLE_SIZE_EFFECTS_ONLY)) != 0;
-
-            if(!configurable)
-            {
-                continue;
-            }
-
-            unsigned int max_size     = controller->GetZoneLEDsMax(zone_index);
-            unsigned int current_size = controller->GetZoneLEDsCount(zone_index);
-
-            if(max_size > 0 && current_size < max_size)
-            {
-                controller->ResizeZone((int)zone_index, (int)max_size);
-                resized_any = true;
-            }
-        }
-    }
-
-    if(resized_any)
-    {
-        ProfileManager* profile_manager = ResourceManager::get()->GetProfileManager();
-
-        if(profile_manager != nullptr)
-        {
-            profile_manager->SaveConfiguration();
-        }
-    }
-}
-
 void AgileRgbSimpleDialog::on_ScanDevicesButton_clicked()
 {
     ui->ScanDevicesButton->setEnabled(false);
@@ -154,12 +105,22 @@ void AgileRgbSimpleDialog::on_ScanDevicesButton_clicked()
     {
         ResourceManager::get()->RescanDevices();
 
-        MaximizeManuallyConfigurableZones();
-
         QMetaObject::invokeMethod(this_dialog, [this_dialog]()
         {
             this_dialog->ui->ScanDevicesButton->setEnabled(true);
             this_dialog->ui->ScanDevicesButton->setText(tr("All Devices"));
+
+            /*-----------------------------------------------*\
+            | Some devices (typically ARGB fan/strip headers    |
+            | wired through a motherboard or hub) can't report  |
+            | how many LEDs are actually connected. Show the    |
+            | same "how many LEDs are on this header?" prompt    |
+            | the classic dialog uses, instead of guessing a     |
+            | size -- guessing (e.g. maxing out at the protocol's |
+            | 1024-LED ceiling) sends a malformed-length update  |
+            | that visibly corrupts the strip's colors.           |
+            \*-----------------------------------------------*/
+            OpenRGBZoneInitializationDialog::RunChecks(this_dialog);
 
             /*-----------------------------------------------*\
             | Newly-detected devices won't have the current    |
