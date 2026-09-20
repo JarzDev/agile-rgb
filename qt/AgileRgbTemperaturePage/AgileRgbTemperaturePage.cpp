@@ -110,6 +110,7 @@ void AgileRgbTemperaturePage::SaveSettings()
 void AgileRgbTemperaturePage::on_SaveButton_clicked()
 {
     SaveSettings();
+    UpdateCurrentTemperature();
 }
 
 void AgileRgbTemperaturePage::on_CancelButton_clicked()
