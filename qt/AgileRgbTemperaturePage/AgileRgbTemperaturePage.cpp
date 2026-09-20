@@ -15,6 +15,7 @@
 #include "AgileRgbTemperatureRangeCard.h"
 
 #include "ResourceManager.h"
+#include "SettingsManager.h"
 #include "TemperatureMonitor.h"
 
 #include <QColor>

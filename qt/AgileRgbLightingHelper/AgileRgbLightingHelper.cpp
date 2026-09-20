@@ -14,6 +14,8 @@
 #include "AgileRgbLightingHelper.h"
 #include "ResourceManager.h"
 
+#include <QVariant>
+
 #include <algorithm>
 #include <cctype>
 #include <cmath>

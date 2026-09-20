@@ -1,9 +1,12 @@
 ## ![Agile Rgb](img/logo.png "Agile Rgb Logo")
 
+[![Support on Patreon](https://img.shields.io/badge/Support-Patreon-F96854?logo=patreon&logoColor=white)](https://www.patreon.com/c/jarzdev)
+
 > **Agile Rgb** is a fork of [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB) by Adam Honse (CalcProgrammer1)
 > and the OpenRGB contributors, licensed under the GNU General Public License v2.0 (see [LICENSE](LICENSE)).
 > All credit for the original device support, protocols, and architecture goes to the OpenRGB project and its
 > contributors. This fork focuses on a simplified, streamlined user interface built on top of that foundation.
+> Agile Rgb itself is developed and maintained by [JarzDev](https://www.patreon.com/c/jarzdev).
 
 ## Design Direction
 
@@ -81,6 +84,11 @@ This project interacts directly with hardware using reverse engineered protocols
 
 * [Windows Setup and Usage](https://gitlab.com/OpenRGBDevelopers/OpenRGB-Wiki/-/blob/stable/User-Documentation/OpenRGB-Windows-Setup-and-Usage.md)
 * [Frequently Asked Questions](https://gitlab.com/OpenRGBDevelopers/OpenRGB-Wiki/-/blob/stable/User-Documentation/Frequently-Asked-Questions.md)
+
+## Support Agile Rgb
+
+* Agile Rgb is maintained by [JarzDev](https://www.patreon.com/c/jarzdev) as a fork of OpenRGB. If you'd like to support development of Agile Rgb specifically, you can do so on Patreon:
+* [Become a Patron of JarzDev](https://www.patreon.com/c/jarzdev)
 
 ## Support OpenRGB
 
