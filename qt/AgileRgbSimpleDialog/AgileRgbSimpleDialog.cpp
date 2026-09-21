@@ -83,6 +83,10 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     ui->StartWithWindowsCheckBox->blockSignals(true);
     ui->StartWithWindowsCheckBox->setChecked(LoadAutoStartSetting());
     ui->StartWithWindowsCheckBox->blockSignals(false);
+
+    ui->MinimizeToTrayCheckBox->blockSignals(true);
+    ui->MinimizeToTrayCheckBox->setChecked(LoadMinimizeToTraySetting());
+    ui->MinimizeToTrayCheckBox->blockSignals(false);
 }
 
 AgileRgbSimpleDialog::~AgileRgbSimpleDialog()
@@ -215,11 +219,12 @@ void AgileRgbSimpleDialog::SetupTrayIcon()
 void AgileRgbSimpleDialog::closeEvent(QCloseEvent *event)
 {
     /*-------------------------------------------------*\
-    | Closing (or minimizing) the window keeps Agile Rgb  |
-    | running in the system tray instead of exiting, so    |
-    | lighting effects keep applying in the background     |
+    | When enabled, closing (or minimizing) the window     |
+    | keeps Agile Rgb running in the system tray instead of  |
+    | exiting, so lighting effects keep applying in the       |
+    | background                                                |
     \*-------------------------------------------------*/
-    if(!this->isHidden() && event->spontaneous())
+    if(ui->MinimizeToTrayCheckBox->isChecked() && !this->isHidden() && event->spontaneous())
     {
         hide();
         event->ignore();
@@ -314,5 +319,27 @@ void AgileRgbSimpleDialog::on_StartWithWindowsCheckBox_toggled(bool checked)
     json autostart_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("AutoStart");
     autostart_settings["enabled"] = checked;
     ResourceManager::get()->GetSettingsManager()->SetSettings("AutoStart", autostart_settings);
+    ResourceManager::get()->GetSettingsManager()->SaveSettings();
+}
+
+bool AgileRgbSimpleDialog::LoadMinimizeToTraySetting()
+{
+    json ui_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("UserInterface");
+
+    /*-------------------------------------------------*\
+    | Shares the "minimize_on_close" key with the classic  |
+    | dialog's Settings tab, so both windows agree on the   |
+    | same behavior. Defaults to on here (unlike Pro Mode's  |
+    | off-by-default), since staying in the tray is the       |
+    | expected behavior for a simplified always-on app         |
+    \*-------------------------------------------------*/
+    return ui_settings.contains("minimize_on_close") ? ui_settings["minimize_on_close"].get<bool>() : true;
+}
+
+void AgileRgbSimpleDialog::on_MinimizeToTrayCheckBox_toggled(bool checked)
+{
+    json ui_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("UserInterface");
+    ui_settings["minimize_on_close"] = checked;
+    ResourceManager::get()->GetSettingsManager()->SetSettings("UserInterface", ui_settings);
     ResourceManager::get()->GetSettingsManager()->SaveSettings();
 }

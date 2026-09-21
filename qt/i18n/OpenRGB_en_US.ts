@@ -71,64 +71,74 @@
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="119"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="123"/>
         <source>All Devices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="66"/>
-        <source>Start Agile Rgb automatically when Windows starts, minimized to the system tray</source>
+        <source>Keep Agile Rgb running in the system tray when you close the window, instead of exiting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="69"/>
+        <source>Keep in tray on close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="76"/>
+        <source>Start Agile Rgb automatically when Windows starts, minimized to the system tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="79"/>
         <source>Start with Windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="77"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="87"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="82"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="92"/>
         <source>Español</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="90"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="100"/>
         <source>Pro Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="103"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="113"/>
         <source>Fixed Colors &amp; Breathing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="108"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="118"/>
         <source>Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="113"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="123"/>
         <source>Rainbow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="108"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="112"/>
         <source>Scanning...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="185"/>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="197"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="189"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="201"/>
         <source>Show/Hide</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="186"/>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="201"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="190"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="205"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -147,7 +157,7 @@
     </message>
     <message>
         <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="329"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="361"/>
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>

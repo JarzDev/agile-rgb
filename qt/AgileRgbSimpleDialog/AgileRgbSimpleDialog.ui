@@ -61,6 +61,16 @@
        </widget>
       </item>
       <item>
+       <widget class="QCheckBox" name="MinimizeToTrayCheckBox">
+        <property name="toolTip">
+         <string>Keep Agile Rgb running in the system tray when you close the window, instead of exiting</string>
+        </property>
+        <property name="text">
+         <string>Keep in tray on close</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QCheckBox" name="StartWithWindowsCheckBox">
         <property name="toolTip">
          <string>Start Agile Rgb automatically when Windows starts, minimized to the system tray</string>

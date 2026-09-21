@@ -51,6 +51,7 @@ private slots:
     void        on_SimpleTabBar_currentChanged(int index);
     void        on_LanguageBox_currentIndexChanged(int index);
     void        on_StartWithWindowsCheckBox_toggled(bool checked);
+    void        on_MinimizeToTrayCheckBox_toggled(bool checked);
     void        on_ShowHide();
     void        on_TrayActivated(QSystemTrayIcon::ActivationReason reason);
     void        on_Exit();
@@ -69,4 +70,5 @@ private:
     void        SetupTrayIcon();
     void        ApplyAutoStartSetting(bool enabled);
     bool        LoadAutoStartSetting();
+    bool        LoadMinimizeToTraySetting();
 };
