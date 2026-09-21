@@ -98,7 +98,7 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
     ui->setupUi(this);
 
     lighting = new AgileRgbLightingHelper(this);
-    applied_this_session = false;
+    active_and_saved = false;
 
     LoadSettings();
 
@@ -109,15 +109,11 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
 
     /*-------------------------------------------------*\
     | If temperature-reactive lighting was already enabled  |
-    | and saved in a previous session, apply it once right     |
-    | away on launch -- this is the one page with settings       |
-    | that actually persist between runs, and someone relying     |
-    | on "Start with Windows" needs it to keep working             |
-    | unattended, without having to reopen this tab and click       |
-    | Save & Apply. This is a one-time action equivalent to a         |
-    | single Save & Apply click, not a standing flag: switching        |
-    | away from this tab and back must still require the button        |
-    | again, same as every other tab                                     |
+    | and saved in a previous session, resume it on launch --  |
+    | this is the one page with settings that actually persist   |
+    | between runs, and someone relying on "Start with Windows"   |
+    | needs it to keep reacting to temperature unattended, without  |
+    | reopening this tab and clicking Save & Apply again              |
     \*-------------------------------------------------*/
     if(ui->EnableCheckBox->isChecked())
     {
@@ -142,9 +138,8 @@ void AgileRgbTemperaturePage::ApplyOnLaunchAfterDetection()
 
             if(this_page->ui->EnableCheckBox->isChecked())
             {
-                this_page->applied_this_session = true;
+                this_page->active_and_saved = true;
                 this_page->UpdateCurrentTemperature();
-                this_page->applied_this_session = false;
             }
         }, Qt::QueuedConnection);
     });
@@ -388,7 +383,7 @@ void AgileRgbTemperaturePage::on_SaveButton_clicked()
 {
     SaveSettings();
 
-    applied_this_session = true;
+    active_and_saved = ui->EnableCheckBox->isChecked();
 
     UpdateCurrentTemperature();
 }
@@ -396,6 +391,8 @@ void AgileRgbTemperaturePage::on_SaveButton_clicked()
 void AgileRgbTemperaturePage::on_CancelButton_clicked()
 {
     LoadSettings();
+
+    active_and_saved = ui->EnableCheckBox->isChecked();
 }
 
 void AgileRgbTemperaturePage::on_EnableCheckBox_toggled(bool /*checked*/)
@@ -421,7 +418,7 @@ void AgileRgbTemperaturePage::UpdateCurrentTemperature()
 
     ui->CurrentTempValueLabel->setText(QString("%1°C").arg(celsius));
 
-    if(applied_this_session && ui->EnableCheckBox->isChecked())
+    if(active_and_saved)
     {
         ApplyColorForTemperature(celsius);
     }

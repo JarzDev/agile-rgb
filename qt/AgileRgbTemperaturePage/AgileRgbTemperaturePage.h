@@ -72,14 +72,16 @@ private:
     std::vector<AgileRgbTemperatureRangeCard*>     range_cards;
 
     /*-----------------------------------------------------*\
-    | Only true once the user has clicked "Save & Apply" in   |
-    | this session. The temperature reading keeps polling and  |
-    | updating the on-screen label regardless, but no color      |
-    | is ever pushed to devices until this is set -- simply       |
-    | switching to this tab, toggling Enable, or editing a        |
-    | range must never apply anything on their own                |
+    | True once "Save & Apply" has been clicked with Enable   |
+    | checked (or restored from a previous session where it     |
+    | was left on). While true, every poll_timer tick keeps       |
+    | reacting to temperature changes on its own, indefinitely --  |
+    | that's the point of the feature. It only goes false again      |
+    | via Cancel or explicitly disabling and saving; switching        |
+    | tabs, editing a range, or toggling the checkbox without           |
+    | saving must never flip it on their own                            |
     \*-----------------------------------------------------*/
-    bool                                            applied_this_session;
+    bool                                            active_and_saved;
 
     void        LoadSettings();
     void        SaveSettings();
