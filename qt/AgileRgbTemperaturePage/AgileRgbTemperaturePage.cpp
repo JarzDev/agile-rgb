@@ -94,6 +94,7 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
     ui->setupUi(this);
 
     lighting = new AgileRgbLightingHelper(this);
+    applied_this_session = false;
 
     LoadSettings();
 
@@ -339,6 +340,9 @@ void AgileRgbTemperaturePage::SaveSettings()
 void AgileRgbTemperaturePage::on_SaveButton_clicked()
 {
     SaveSettings();
+
+    applied_this_session = true;
+
     UpdateCurrentTemperature();
 }
 
@@ -349,6 +353,12 @@ void AgileRgbTemperaturePage::on_CancelButton_clicked()
 
 void AgileRgbTemperaturePage::on_EnableCheckBox_toggled(bool /*checked*/)
 {
+    /*-------------------------------------------------*\
+    | Toggling Enable only stages the setting; it does not  |
+    | apply anything by itself. The user still has to click  |
+    | "Save & Apply" for it to take effect, same as editing    |
+    | a range or switching tabs                                 |
+    \*-------------------------------------------------*/
     SaveSettings();
 }
 
@@ -364,7 +374,7 @@ void AgileRgbTemperaturePage::UpdateCurrentTemperature()
 
     ui->CurrentTempValueLabel->setText(QString("%1°C").arg(celsius));
 
-    if(ui->EnableCheckBox->isChecked())
+    if(applied_this_session && ui->EnableCheckBox->isChecked())
     {
         ApplyColorForTemperature(celsius);
     }

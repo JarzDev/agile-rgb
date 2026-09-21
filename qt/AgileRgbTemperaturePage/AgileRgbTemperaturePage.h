@@ -71,6 +71,16 @@ private:
     AgileRgbLightingHelper*                        lighting;
     std::vector<AgileRgbTemperatureRangeCard*>     range_cards;
 
+    /*-----------------------------------------------------*\
+    | Only true once the user has clicked "Save & Apply" in   |
+    | this session. The temperature reading keeps polling and  |
+    | updating the on-screen label regardless, but no color      |
+    | is ever pushed to devices until this is set -- simply       |
+    | switching to this tab, toggling Enable, or editing a        |
+    | range must never apply anything on their own                |
+    \*-----------------------------------------------------*/
+    bool                                            applied_this_session;
+
     void        LoadSettings();
     void        SaveSettings();
     void        ApplyColorForTemperature(int celsius);

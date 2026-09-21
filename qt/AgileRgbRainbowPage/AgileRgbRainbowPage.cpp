@@ -38,11 +38,14 @@ void AgileRgbRainbowPage::changeEvent(QEvent *event)
 
 void AgileRgbRainbowPage::SetPageActive(bool active)
 {
-    if(active)
-    {
-        Apply();
-    }
-    else
+    /*-------------------------------------------------*\
+    | Switching tabs must never apply a color/effect on   |
+    | its own -- only the "Apply" button does that. This    |
+    | only stops this page's effect when it stops being      |
+    | the visible tab, so it doesn't keep fighting the        |
+    | other tabs over the same devices                         |
+    \*-------------------------------------------------*/
+    if(!active)
     {
         lighting->Stop();
     }
