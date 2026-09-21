@@ -35,6 +35,13 @@ public:
 
     void        SetRangeKind(TemperatureRangeKind kind);
 
+    /*-----------------------------------------------------*\
+    | Shows/hides the small "x" remove button in the card's  |
+    | title bar. Only intermediate cards beyond the original  |
+    | three (Low/Medium/High) can be removed                   |
+    \*-----------------------------------------------------*/
+    void        SetRemovable(bool removable);
+
     void        SetMinTemperature(int celsius);
     void        SetMaxTemperature(int celsius);
     int         GetMinTemperature();
@@ -45,6 +52,7 @@ public:
 
 signals:
     void        RangeChanged();
+    void        RemoveRequested();
 
 protected:
     void        changeEvent(QEvent *event) override;
@@ -53,6 +61,7 @@ private slots:
     void        on_MinTempSpinBox_valueChanged(int value);
     void        on_MaxTempSpinBox_valueChanged(int value);
     void        on_ColorWheelBox_colorChanged(const QColor color);
+    void        on_RemoveButton_clicked();
 
 private:
     Ui::AgileRgbTemperatureRangeCard*  ui;

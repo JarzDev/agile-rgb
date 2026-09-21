@@ -14,6 +14,7 @@
 
 #include <QFrame>
 #include <QTimer>
+#include <vector>
 #include <nlohmann/json.hpp>
 
 #include "AgileRgbLightingHelper.h"
@@ -24,6 +25,16 @@ namespace Ui
 {
     class AgileRgbTemperaturePage;
 }
+
+class AgileRgbTemperatureRangeCard;
+
+/*-----------------------------------------------------*\
+| Minimum/maximum number of temperature range cards.     |
+| Minimum is the original Low/Medium/High set; maximum    |
+| allows up to three extra cards for a smoother gradient   |
+\*-----------------------------------------------------*/
+static const int AGILERGB_TEMP_RANGES_MIN = 3;
+static const int AGILERGB_TEMP_RANGES_MAX = 6;
 
 class AgileRgbTemperaturePage : public QFrame
 {
@@ -51,23 +62,32 @@ private slots:
     void        on_SaveButton_clicked();
     void        on_CancelButton_clicked();
     void        on_EnableCheckBox_toggled(bool checked);
-    void        on_LowRangeChanged();
-    void        on_MediumRangeChanged();
+    void        on_AddRangeButton_clicked();
+    void        on_RemoveRangeButton_clicked();
 
 private:
-    Ui::AgileRgbTemperaturePage*   ui;
-    QTimer*                        poll_timer;
-    AgileRgbLightingHelper*        lighting;
+    Ui::AgileRgbTemperaturePage*                   ui;
+    QTimer*                                        poll_timer;
+    AgileRgbLightingHelper*                        lighting;
+    std::vector<AgileRgbTemperatureRangeCard*>     range_cards;
 
     void        LoadSettings();
     void        SaveSettings();
     void        ApplyColorForTemperature(int celsius);
 
     /*-----------------------------------------------------*\
-    | Keeps the three ranges contiguous and non-overlapping: |
-    | Medium.min is always Low.max + 1, and High.min is       |
-    | always Medium.max + 1                                    |
+    | Builds range_cards with `count` cards (clamped to       |
+    | [AGILERGB_TEMP_RANGES_MIN, AGILERGB_TEMP_RANGES_MAX]),   |
+    | applying a default green->yellow->orange->red gradient   |
+    | and evenly-spaced default thresholds across them          |
     \*-----------------------------------------------------*/
-    void        SyncMediumMinToLowMax();
-    void        SyncHighMinToMediumMax();
+    void        RebuildCards(int count);
+
+    /*-----------------------------------------------------*\
+    | Keeps every range contiguous and non-overlapping:       |
+    | each card's min is always the previous card's max + 1    |
+    \*-----------------------------------------------------*/
+    void        SyncRangeAt(int index);
+
+    void        UpdateAddRemoveButtons();
 };

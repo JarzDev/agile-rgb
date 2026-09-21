@@ -19,6 +19,8 @@ AgileRgbTemperatureRangeCard::AgileRgbTemperatureRangeCard(QWidget *parent) :
 
     kind = TemperatureRangeKind::MEDIUM;
 
+    ui->RemoveButton->setVisible(false);
+
     UpdateSwatch();
 }
 
@@ -58,6 +60,11 @@ void AgileRgbTemperatureRangeCard::SetRangeKind(TemperatureRangeKind new_kind)
     }
 
     UpdateFieldVisibility();
+}
+
+void AgileRgbTemperatureRangeCard::SetRemovable(bool removable)
+{
+    ui->RemoveButton->setVisible(removable);
 }
 
 void AgileRgbTemperatureRangeCard::UpdateFieldVisibility()
@@ -149,4 +156,9 @@ void AgileRgbTemperatureRangeCard::on_ColorWheelBox_colorChanged(const QColor /*
     UpdateSwatch();
 
     emit RangeChanged();
+}
+
+void AgileRgbTemperatureRangeCard::on_RemoveButton_clicked()
+{
+    emit RemoveRequested();
 }
