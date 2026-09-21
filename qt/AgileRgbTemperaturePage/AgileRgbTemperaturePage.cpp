@@ -19,7 +19,11 @@
 #include "TemperatureMonitor.h"
 
 #include <QColor>
+#include <QMetaObject>
+#include <QPointer>
+#include <QApplication>
 #include <algorithm>
+#include <thread>
 
 static const char* SETTINGS_KEY = "AgileRgbTemperature";
 
@@ -101,6 +105,8 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &AgileRgbTemperaturePage::UpdateCurrentTemperature);
 
+    UpdateCurrentTemperature();
+
     /*-------------------------------------------------*\
     | If temperature-reactive lighting was already enabled  |
     | and saved in a previous session, apply it once right     |
@@ -115,14 +121,34 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
     \*-------------------------------------------------*/
     if(ui->EnableCheckBox->isChecked())
     {
-        applied_this_session = true;
-        UpdateCurrentTemperature();
-        applied_this_session = false;
+        ApplyOnLaunchAfterDetection();
     }
-    else
+}
+
+void AgileRgbTemperaturePage::ApplyOnLaunchAfterDetection()
+{
+    QPointer<AgileRgbTemperaturePage> this_page(this);
+
+    std::thread wait_thread([this_page]()
     {
-        UpdateCurrentTemperature();
-    }
+        ResourceManager::get()->WaitForDetection();
+
+        QMetaObject::invokeMethod(qApp, [this_page]()
+        {
+            if(this_page.isNull())
+            {
+                return;
+            }
+
+            if(this_page->ui->EnableCheckBox->isChecked())
+            {
+                this_page->applied_this_session = true;
+                this_page->UpdateCurrentTemperature();
+                this_page->applied_this_session = false;
+            }
+        }, Qt::QueuedConnection);
+    });
+    wait_thread.detach();
 }
 
 AgileRgbTemperaturePage::~AgileRgbTemperaturePage()

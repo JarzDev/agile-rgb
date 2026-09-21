@@ -86,6 +86,18 @@ private:
     void        ApplyColorForTemperature(int celsius);
 
     /*-----------------------------------------------------*\
+    | Waits (on a background thread) for the RGB device       |
+    | detection that runs at startup to actually finish, then   |
+    | applies the saved color on the UI thread. Device detection |
+    | is asynchronous and still in progress right when this page   |
+    | is constructed -- applying immediately can run before any     |
+    | controllers exist yet, so the color silently never reaches      |
+    | the hardware (most noticeable on a real Windows boot, where       |
+    | detection takes longer under the extra system load)                |
+    \*-----------------------------------------------------*/
+    void        ApplyOnLaunchAfterDetection();
+
+    /*-----------------------------------------------------*\
     | Builds range_cards with `count` cards (clamped to       |
     | [AGILERGB_TEMP_RANGES_MIN, AGILERGB_TEMP_RANGES_MAX]),   |
     | applying a default green->yellow->orange->red gradient   |
