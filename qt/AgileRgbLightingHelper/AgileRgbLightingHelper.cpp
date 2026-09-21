@@ -67,16 +67,25 @@ int AgileRgbLightingHelper::FindModeByName(RGBController* controller, const char
 
 void AgileRgbLightingHelper::EnsureDirectMode(RGBController* controller)
 {
-    int direct_mode = FindModeByName(controller, "direct");
+    /*-------------------------------------------------*\
+    | Prefer "Static" over "Direct"/"Custom": some zones  |
+    | (e.g. motherboard ARGB headers) can't report how     |
+    | many LEDs are physically connected, so their per-LED  |
+    | ("Direct") buffer ends up sized wrong and only colors  |
+    | part of the strip. "Static" applies one mode-specific  |
+    | color to the whole zone regardless of that size, so it  |
+    | lights the entire strip correctly on those devices.      |
+    \*-------------------------------------------------*/
+    int direct_mode = FindModeByName(controller, "static");
 
     if(direct_mode < 0)
     {
-        direct_mode = FindModeByName(controller, "custom");
+        direct_mode = FindModeByName(controller, "direct");
     }
 
     if(direct_mode < 0)
     {
-        direct_mode = FindModeByName(controller, "static");
+        direct_mode = FindModeByName(controller, "custom");
     }
 
     if(direct_mode < 0)
