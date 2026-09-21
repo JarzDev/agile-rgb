@@ -22,6 +22,7 @@
 #include "SettingsManager.h"
 #include "ProfileManager.h"
 #include "AutoStart.h"
+#include "LogManager.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -134,6 +135,15 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     \*-------------------------------------------------*/
     if(autostart_enabled)
     {
+        json autostart_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("AutoStart");
+
+        if(!autostart_settings.contains("start_minimized") || !autostart_settings["start_minimized"].get<bool>())
+        {
+            autostart_settings["start_minimized"] = true;
+            ResourceManager::get()->GetSettingsManager()->SetSettings("AutoStart", autostart_settings);
+            ResourceManager::get()->GetSettingsManager()->SaveSettings();
+        }
+
         ApplyAutoStartSetting(true);
     }
 
@@ -388,8 +398,20 @@ void AgileRgbSimpleDialog::on_StartWithWindowsCheckBox_toggled(bool checked)
 {
     ApplyAutoStartSetting(checked);
 
+    /*-------------------------------------------------*\
+    | The classic dialog's own on_SettingsUpdated() also      |
+    | writes this same shortcut whenever it runs (e.g. right    |
+    | after its own construction), independently rebuilding      |
+    | the argument list from "start_minimized"/"custom_arguments"  |
+    | instead of ApplyAutoStartSetting()'s hardcoded                |
+    | "--startminimized". Leaving start_minimized unset meant that   |
+    | the classic dialog's pass overwrote the shortcut with an empty  |
+    | argument list right after this one wrote the correct one. Set    |
+    | it here too so both code paths agree on the same shortcut         |
+    \*-------------------------------------------------*/
     json autostart_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("AutoStart");
-    autostart_settings["enabled"] = checked;
+    autostart_settings["enabled"]         = checked;
+    autostart_settings["start_minimized"] = true;
     ResourceManager::get()->GetSettingsManager()->SetSettings("AutoStart", autostart_settings);
     ResourceManager::get()->GetSettingsManager()->SaveSettings();
 }

@@ -98,23 +98,31 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
 
     LoadSettings();
 
+    poll_timer = new QTimer(this);
+    connect(poll_timer, &QTimer::timeout, this, &AgileRgbTemperaturePage::UpdateCurrentTemperature);
+
     /*-------------------------------------------------*\
     | If temperature-reactive lighting was already enabled  |
-    | and saved in a previous session, resume applying it     |
-    | on launch -- this is the one page with settings that      |
-    | actually persist between runs, and someone relying on      |
-    | "Start with Windows" needs it to keep working unattended,  |
-    | without having to reopen this tab and click Save & Apply    |
+    | and saved in a previous session, apply it once right     |
+    | away on launch -- this is the one page with settings       |
+    | that actually persist between runs, and someone relying     |
+    | on "Start with Windows" needs it to keep working             |
+    | unattended, without having to reopen this tab and click       |
+    | Save & Apply. This is a one-time action equivalent to a         |
+    | single Save & Apply click, not a standing flag: switching        |
+    | away from this tab and back must still require the button        |
+    | again, same as every other tab                                     |
     \*-------------------------------------------------*/
     if(ui->EnableCheckBox->isChecked())
     {
         applied_this_session = true;
+        UpdateCurrentTemperature();
+        applied_this_session = false;
     }
-
-    poll_timer = new QTimer(this);
-    connect(poll_timer, &QTimer::timeout, this, &AgileRgbTemperaturePage::UpdateCurrentTemperature);
-
-    UpdateCurrentTemperature();
+    else
+    {
+        UpdateCurrentTemperature();
+    }
 }
 
 AgileRgbTemperaturePage::~AgileRgbTemperaturePage()
