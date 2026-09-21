@@ -37,6 +37,10 @@ One of the biggest complaints about RGB is the software ecosystem surrounding it
 
 ![OpenRGB_Device_View](Documentation/Images/OpenRGB_Screenshot.png "OpenRGB Device View Screenshot")
 
+## Download Agile Rgb
+
+  * **Windows (64-bit, portable):** [Download the latest release](https://github.com/JarzDev/agile-rgb/releases/latest) — extract the zip anywhere and run `AgileRgb.exe`. No installation required.
+
 ## Website
 
 * Check out our website at [openrgb.org](https://openrgb.org)
