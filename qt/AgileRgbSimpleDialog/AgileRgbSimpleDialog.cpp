@@ -72,6 +72,15 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     pro_dialog = new OpenRGBDialog(nullptr);
 
     /*-------------------------------------------------*\
+    | The classic dialog always shows its own tray icon   |
+    | on construction; suppress it since this window's own  |
+    | tray icon already covers show/hide/exit for both        |
+    \*-------------------------------------------------*/
+    pro_dialog->SetTrayIconVisible(false);
+
+    pro_mode_ever_shown = false;
+
+    /*-------------------------------------------------*\
     | Only the tab that is actually visible should drive  |
     | the lighting; otherwise all three tabs would apply   |
     | their effect at once and fight over the same devices |
@@ -101,6 +110,8 @@ OpenRGBDialog* AgileRgbSimpleDialog::GetProDialog()
 
 void AgileRgbSimpleDialog::on_ProModeButton_clicked()
 {
+    pro_mode_ever_shown = true;
+
     pro_dialog->show();
     pro_dialog->raise();
     pro_dialog->activateWindow();
@@ -244,6 +255,18 @@ void AgileRgbSimpleDialog::on_ShowHide()
         if(isMinimized())
         {
             showNormal();
+        }
+
+        /*-------------------------------------------------*\
+        | The classic dialog's own tray icon is suppressed,   |
+        | so if the user opened Pro Mode and then closed it     |
+        | directly (its minimize-on-close setting hid it        |
+        | rather than exiting), this is the only remaining way  |
+        | to bring it back                                       |
+        \*-------------------------------------------------*/
+        if(pro_mode_ever_shown && pro_dialog->isHidden())
+        {
+            pro_dialog->show();
         }
     }
     else

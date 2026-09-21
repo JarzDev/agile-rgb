@@ -65,6 +65,7 @@ private:
     QMenu*                     trayMenu;
     QAction*                   trayActionShowHide;
     QAction*                   trayActionExit;
+    bool                       pro_mode_ever_shown;
 
     void        SetLanguage(std::string locale);
     void        SetupTrayIcon();

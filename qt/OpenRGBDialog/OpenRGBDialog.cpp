@@ -1961,6 +1961,11 @@ void OpenRGBDialog::on_SetAllDevices(unsigned char red, unsigned char green, uns
     }
 }
 
+void OpenRGBDialog::SetTrayIconVisible(bool visible)
+{
+    trayIcon->setVisible(visible);
+}
+
 void OpenRGBDialog::on_ShowHide()
 {
     if(isHidden())

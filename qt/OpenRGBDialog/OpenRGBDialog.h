@@ -62,6 +62,13 @@ public:
     void SetDialogMessage(PLogMessage msg);
     void SetLanguage(std::string locale);
 
+    /*-----------------------------------------------------*\
+    | Lets an embedding window (e.g. AgileRgbSimpleDialog)   |
+    | that already provides its own tray icon suppress this   |
+    | dialog's, so only one tray icon is shown at a time       |
+    \*-----------------------------------------------------*/
+    void SetTrayIconVisible(bool visible);
+
     bool DontShowAgain;
 
 signals:
