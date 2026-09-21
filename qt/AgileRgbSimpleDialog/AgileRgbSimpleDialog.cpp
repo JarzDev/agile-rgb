@@ -21,11 +21,13 @@
 #include "ResourceManager.h"
 #include "SettingsManager.h"
 #include "ProfileManager.h"
+#include "AutoStart.h"
 
 #include <QFile>
 #include <QTextStream>
 #include <QApplication>
 #include <QMetaObject>
+#include <QCloseEvent>
 
 #include <thread>
 
@@ -75,6 +77,12 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     | their effect at once and fight over the same devices |
     \*-------------------------------------------------*/
     on_SimpleTabBar_currentChanged(ui->SimpleTabBar->currentIndex());
+
+    SetupTrayIcon();
+
+    ui->StartWithWindowsCheckBox->blockSignals(true);
+    ui->StartWithWindowsCheckBox->setChecked(LoadAutoStartSetting());
+    ui->StartWithWindowsCheckBox->blockSignals(false);
 }
 
 AgileRgbSimpleDialog::~AgileRgbSimpleDialog()
@@ -171,7 +179,140 @@ void AgileRgbSimpleDialog::changeEvent(QEvent *event)
     if(event->type() == QEvent::LanguageChange)
     {
         ui->retranslateUi(this);
+
+        if(trayActionShowHide != nullptr)
+        {
+            trayActionShowHide->setText(tr("Show/Hide"));
+            trayActionExit->setText(tr("Exit"));
+        }
     }
 
     QMainWindow::changeEvent(event);
+}
+
+void AgileRgbSimpleDialog::SetupTrayIcon()
+{
+    trayMenu = new QMenu(this);
+
+    trayActionShowHide = new QAction(tr("Show/Hide"), this);
+    connect(trayActionShowHide, &QAction::triggered, this, &AgileRgbSimpleDialog::on_ShowHide);
+    trayMenu->addAction(trayActionShowHide);
+
+    trayActionExit = new QAction(tr("Exit"), this);
+    connect(trayActionExit, &QAction::triggered, this, &AgileRgbSimpleDialog::on_Exit);
+    trayMenu->addAction(trayActionExit);
+
+    trayIcon = new QSystemTrayIcon(this);
+    trayIcon->setIcon(QIcon(":org.openrgb.OpenRGB.png"));
+    trayIcon->setToolTip("Agile Rgb");
+    trayIcon->setContextMenu(trayMenu);
+
+    connect(trayIcon, &QSystemTrayIcon::activated, this, &AgileRgbSimpleDialog::on_TrayActivated);
+
+    trayIcon->show();
+}
+
+void AgileRgbSimpleDialog::closeEvent(QCloseEvent *event)
+{
+    /*-------------------------------------------------*\
+    | Closing (or minimizing) the window keeps Agile Rgb  |
+    | running in the system tray instead of exiting, so    |
+    | lighting effects keep applying in the background     |
+    \*-------------------------------------------------*/
+    if(!this->isHidden() && event->spontaneous())
+    {
+        hide();
+        event->ignore();
+    }
+    else
+    {
+        QMainWindow::closeEvent(event);
+    }
+}
+
+void AgileRgbSimpleDialog::on_ShowHide()
+{
+    if(isHidden())
+    {
+        show();
+
+        if(isMinimized())
+        {
+            showNormal();
+        }
+    }
+    else
+    {
+        hide();
+    }
+}
+
+void AgileRgbSimpleDialog::on_TrayActivated(QSystemTrayIcon::ActivationReason reason)
+{
+    if(reason == QSystemTrayIcon::DoubleClick)
+    {
+        on_ShowHide();
+    }
+}
+
+void AgileRgbSimpleDialog::on_Exit()
+{
+    /*-------------------------------------------------*\
+    | This is the exit from the tray icon, not the main   |
+    | window's close button. hide() first so closeEvent()  |
+    | below sees isHidden() == true and does not just re-    |
+    | minimize back to the tray                              |
+    \*-------------------------------------------------*/
+    this->hide();
+    trayIcon->hide();
+    close();
+
+    /*-------------------------------------------------*\
+    | The classic dialog owns its own cleanup (unregisters |
+    | resource manager callbacks, unloads plugins, saves     |
+    | exit profile) in its closeEvent(); route through the    |
+    | same close() -> closeEvent() path instead of a bare      |
+    | QApplication::quit() so that cleanup still runs          |
+    \*-------------------------------------------------*/
+    pro_dialog->hide();
+    pro_dialog->close();
+}
+
+bool AgileRgbSimpleDialog::LoadAutoStartSetting()
+{
+    json autostart_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("AutoStart");
+
+    return autostart_settings.contains("enabled") ? autostart_settings["enabled"].get<bool>() : false;
+}
+
+void AgileRgbSimpleDialog::ApplyAutoStartSetting(bool enabled)
+{
+    AutoStart auto_start("Agile Rgb");
+
+    if(enabled)
+    {
+        AutoStartInfo auto_start_info;
+
+        auto_start_info.args     = "--startminimized";
+        auto_start_info.category = "Utility;";
+        auto_start_info.desc     = "Agile Rgb";
+        auto_start_info.icon     = "Agile Rgb";
+        auto_start_info.path     = auto_start.GetExePath();
+
+        auto_start.EnableAutoStart(auto_start_info);
+    }
+    else
+    {
+        auto_start.DisableAutoStart();
+    }
+}
+
+void AgileRgbSimpleDialog::on_StartWithWindowsCheckBox_toggled(bool checked)
+{
+    ApplyAutoStartSetting(checked);
+
+    json autostart_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("AutoStart");
+    autostart_settings["enabled"] = checked;
+    ResourceManager::get()->GetSettingsManager()->SetSettings("AutoStart", autostart_settings);
+    ResourceManager::get()->GetSettingsManager()->SaveSettings();
 }

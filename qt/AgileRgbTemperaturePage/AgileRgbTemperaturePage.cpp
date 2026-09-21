@@ -65,6 +65,28 @@ static QColor DefaultColorForIndex(int index, int count)
     );
 }
 
+/*-----------------------------------------------------*\
+| Explicit defaults for the full 6-range set (3 extra     |
+| ranges added on top of Low/Medium/High), matched to a    |
+| hand-picked smooth green -> yellow -> orange -> red       |
+| gradient and thresholds                                   |
+\*-----------------------------------------------------*/
+struct DefaultRangeEntry
+{
+    int    max_temperature;
+    QColor color;
+};
+
+static const DefaultRangeEntry DEFAULT_SIX_RANGES[] =
+{
+    { 40,  QColor(0,   255, 127) },
+    { 55,  QColor(80,  255, 0)   },
+    { 60,  QColor(180, 255, 0)   },
+    { 62,  QColor(255, 200, 0)   },
+    { 65,  QColor(255, 120, 0)   },
+    { 999, QColor(255, 0,   0)   }  /* High card: max is unused (no upper bound) */
+};
+
 AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::AgileRgbTemperaturePage)
@@ -162,9 +184,15 @@ void AgileRgbTemperaturePage::RebuildCards(int count)
         card->SetRangeKind(kind);
         card->SetRemovable((i > 0) && (i < count - 1) && (count > AGILERGB_TEMP_RANGES_MIN));
 
+        bool use_fixed_six_defaults = (count == AGILERGB_TEMP_RANGES_MAX);
+
         if((std::size_t)i < previous_colors.size())
         {
             card->SetColor(previous_colors[i]);
+        }
+        else if(use_fixed_six_defaults)
+        {
+            card->SetColor(DEFAULT_SIX_RANGES[i].color);
         }
         else
         {
@@ -174,6 +202,10 @@ void AgileRgbTemperaturePage::RebuildCards(int count)
         if((std::size_t)i < previous_maxes.size())
         {
             card->SetMaxTemperature(previous_maxes[i]);
+        }
+        else if(use_fixed_six_defaults)
+        {
+            card->SetMaxTemperature(DEFAULT_SIX_RANGES[i].max_temperature);
         }
         else
         {

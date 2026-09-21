@@ -14,6 +14,10 @@
 
 #include <QMainWindow>
 #include <QTranslator>
+#include <QSystemTrayIcon>
+#include <QMenu>
+#include <QAction>
+#include <QCloseEvent>
 
 #include "OpenRGBDialog.h"
 
@@ -39,17 +43,30 @@ public:
 
 protected:
     void        changeEvent(QEvent *event) override;
+    void        closeEvent(QCloseEvent *event) override;
 
 private slots:
     void        on_ProModeButton_clicked();
     void        on_ScanDevicesButton_clicked();
     void        on_SimpleTabBar_currentChanged(int index);
     void        on_LanguageBox_currentIndexChanged(int index);
+    void        on_StartWithWindowsCheckBox_toggled(bool checked);
+    void        on_ShowHide();
+    void        on_TrayActivated(QSystemTrayIcon::ActivationReason reason);
+    void        on_Exit();
 
 private:
     Ui::AgileRgbSimpleDialog*  ui;
     OpenRGBDialog*             pro_dialog;
     QTranslator                translator;
 
+    QSystemTrayIcon*           trayIcon;
+    QMenu*                     trayMenu;
+    QAction*                   trayActionShowHide;
+    QAction*                   trayActionExit;
+
     void        SetLanguage(std::string locale);
+    void        SetupTrayIcon();
+    void        ApplyAutoStartSetting(bool enabled);
+    bool        LoadAutoStartSetting();
 };

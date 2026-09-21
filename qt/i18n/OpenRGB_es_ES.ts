@@ -75,44 +75,66 @@
     </message>
     <message>
         <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="59"/>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="109"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="119"/>
         <source>All Devices</source>
         <translation>Todos los dispositivos</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="67"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="66"/>
+        <source>Start Agile Rgb automatically when Windows starts, minimized to the system tray</source>
+        <translation>Iniciar Agile Rgb automáticamente al arrancar Windows, minimizado en la bandeja del sistema</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="69"/>
+        <source>Start with Windows</source>
+        <translation>Iniciar con Windows</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="77"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="72"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="82"/>
         <source>Español</source>
         <translation>Español</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="80"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="90"/>
         <source>Pro Mode</source>
         <translation>Modo Pro</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="93"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="103"/>
         <source>Fixed Colors &amp; Breathing</source>
         <translation>Colores fijos y respiración</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="98"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="108"/>
         <source>Temperature</source>
         <translation>Temperatura</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="103"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.ui" line="113"/>
         <source>Rainbow</source>
         <translation>Arcoíris</translation>
     </message>
     <message>
-        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="98"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="108"/>
         <source>Scanning...</source>
         <translation>Escaneando...</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="185"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="197"/>
+        <source>Show/Hide</source>
+        <translation>Mostrar/esconder</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="186"/>
+        <location filename="../AgileRgbSimpleDialog/AgileRgbSimpleDialog.cpp" line="201"/>
+        <source>Exit</source>
+        <translation>Salir</translation>
     </message>
 </context>
 <context>
@@ -129,27 +151,51 @@
     </message>
     <message>
         <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="52"/>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="188"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.cpp" line="329"/>
         <source>N/A</source>
         <translation>N/D</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="61"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="65"/>
+        <source>Remove the last added range</source>
+        <translation>Quitar el último rango agregado</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="68"/>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="81"/>
+        <source>Add another temperature range</source>
+        <translation>Agregar otro rango de temperatura</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="84"/>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="93"/>
         <source>Enable temperature-reactive lighting</source>
         <translation>Activar iluminación reactiva a la temperatura</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="68"/>
-        <source>Default colors are green, yellow, and red. Click a color wheel to change them.</source>
-        <translation>Los colores predeterminados son verde, amarillo y rojo. Haz clic en una rueda de color para cambiarlos.</translation>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="100"/>
+        <source>Default colors follow a green-yellow-orange-red gradient. Click a color wheel to change them, or use +/- to add up to 3 extra ranges for a smoother gradient.</source>
+        <translation>Los colores predeterminados siguen un degradado verde-amarillo-naranja-rojo. Haz clic en una rueda de color para cambiarlos, o usa +/- para agregar hasta 3 rangos extra y lograr un degradado más suave.</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="100"/>
+        <source>Default colors are green, yellow, and red. Click a color wheel to change them.</source>
+        <translation type="vanished">Los colores predeterminados son verde, amarillo y rojo. Haz clic en una rueda de color para cambiarlos.</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="122"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="107"/>
+        <location filename="../AgileRgbTemperaturePage/AgileRgbTemperaturePage.ui" line="129"/>
         <source>Save &amp; Apply</source>
         <translation>Guardar y aplicar</translation>
     </message>
@@ -157,32 +203,42 @@
 <context>
     <name>AgileRgbTemperatureRangeCard</name>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="40"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="42"/>
         <source>Temperature Range</source>
         <translation>Rango de temperatura</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="51"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="62"/>
+        <source>Remove this range</source>
+        <translation>Quitar este rango</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="65"/>
+        <source>×</source>
+        <translation>×</translation>
+    </message>
+    <message>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="78"/>
         <source>Above (°C):</source>
         <translation>Sobre (°C):</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="72"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.ui" line="99"/>
         <source>Up to (°C):</source>
         <translation>Hasta (°C):</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="48"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="50"/>
         <source>Low Temperature</source>
         <translation>Temperatura baja</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="52"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="54"/>
         <source>Medium Temperature</source>
         <translation>Temperatura media</translation>
     </message>
     <message>
-        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="56"/>
+        <location filename="../AgileRgbTemperatureRangeCard/AgileRgbTemperatureRangeCard.cpp" line="58"/>
         <source>High Temperature (Alert)</source>
         <translation>Temperatura alta (alerta)</translation>
     </message>

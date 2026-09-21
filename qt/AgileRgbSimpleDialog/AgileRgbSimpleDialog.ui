@@ -61,6 +61,16 @@
        </widget>
       </item>
       <item>
+       <widget class="QCheckBox" name="StartWithWindowsCheckBox">
+        <property name="toolTip">
+         <string>Start Agile Rgb automatically when Windows starts, minimized to the system tray</string>
+        </property>
+        <property name="text">
+         <string>Start with Windows</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QComboBox" name="LanguageBox">
         <item>
          <property name="text">
