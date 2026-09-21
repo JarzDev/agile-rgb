@@ -98,6 +98,19 @@ AgileRgbTemperaturePage::AgileRgbTemperaturePage(QWidget *parent) :
 
     LoadSettings();
 
+    /*-------------------------------------------------*\
+    | If temperature-reactive lighting was already enabled  |
+    | and saved in a previous session, resume applying it     |
+    | on launch -- this is the one page with settings that      |
+    | actually persist between runs, and someone relying on      |
+    | "Start with Windows" needs it to keep working unattended,  |
+    | without having to reopen this tab and click Save & Apply    |
+    \*-------------------------------------------------*/
+    if(ui->EnableCheckBox->isChecked())
+    {
+        applied_this_session = true;
+    }
+
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &AgileRgbTemperaturePage::UpdateCurrentTemperature);
 

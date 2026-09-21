@@ -81,6 +81,21 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     pro_mode_ever_shown = false;
 
     /*-------------------------------------------------*\
+    | Restore the last tab the user had open, so relaunching |
+    | (especially via "Start with Windows") lands back where   |
+    | they left off instead of always resetting to Fixed Color  |
+    \*-------------------------------------------------*/
+    if(ui_settings.contains("agile_rgb_last_tab"))
+    {
+        int last_tab = ui_settings["agile_rgb_last_tab"].get<int>();
+
+        if((last_tab >= 0) && (last_tab < ui->SimpleTabBar->count()))
+        {
+            ui->SimpleTabBar->setCurrentIndex(last_tab);
+        }
+    }
+
+    /*-------------------------------------------------*\
     | Only the tab that is actually visible should drive  |
     | the lighting; otherwise all three tabs would apply   |
     | their effect at once and fight over the same devices |
@@ -89,9 +104,23 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
 
     SetupTrayIcon();
 
+    bool autostart_enabled = LoadAutoStartSetting();
+
     ui->StartWithWindowsCheckBox->blockSignals(true);
-    ui->StartWithWindowsCheckBox->setChecked(LoadAutoStartSetting());
+    ui->StartWithWindowsCheckBox->setChecked(autostart_enabled);
     ui->StartWithWindowsCheckBox->blockSignals(false);
+
+    /*-------------------------------------------------*\
+    | Re-apply on every launch (not just when the checkbox  |
+    | is toggled), so an existing shortcut always matches     |
+    | this build's expected arguments (e.g. --startminimized)  |
+    | instead of getting stuck with whatever an older build     |
+    | wrote to it                                                |
+    \*-------------------------------------------------*/
+    if(autostart_enabled)
+    {
+        ApplyAutoStartSetting(true);
+    }
 
     ui->MinimizeToTrayCheckBox->blockSignals(true);
     ui->MinimizeToTrayCheckBox->setChecked(LoadMinimizeToTraySetting());
@@ -161,6 +190,11 @@ void AgileRgbSimpleDialog::on_SimpleTabBar_currentChanged(int index)
     ui->FixedColorTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->FixedColorTab));
     ui->TemperatureTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->TemperatureTab));
     ui->RainbowTab->SetPageActive(index == ui->SimpleTabBar->indexOf(ui->RainbowTab));
+
+    json ui_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("UserInterface");
+    ui_settings["agile_rgb_last_tab"] = index;
+    ResourceManager::get()->GetSettingsManager()->SetSettings("UserInterface", ui_settings);
+    ResourceManager::get()->GetSettingsManager()->SaveSettings();
 }
 
 void AgileRgbSimpleDialog::SetLanguage(std::string locale)
