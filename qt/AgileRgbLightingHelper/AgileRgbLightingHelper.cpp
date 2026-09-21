@@ -94,6 +94,30 @@ void AgileRgbLightingHelper::EnsureDirectMode(RGBController* controller)
     controller->SetActiveMode(direct_mode);
 }
 
+void AgileRgbLightingHelper::ApplyColorToActiveMode(RGBController* controller, const QColor& color)
+{
+    RGBColor rgb_color = ToRGBColor(color.red(), color.green(), color.blue());
+
+    switch(controller->GetModeColorMode(controller->GetActiveMode()))
+    {
+        case MODE_COLORS_PER_LED:
+            controller->SetAllColors(rgb_color);
+            controller->UpdateLEDs();
+            break;
+
+        case MODE_COLORS_MODE_SPECIFIC:
+            for(std::size_t i = 0; i < controller->GetModeColorsCount(controller->GetActiveMode()); i++)
+            {
+                controller->SetModeColor(controller->GetActiveMode(), (unsigned int)i, rgb_color);
+            }
+            controller->UpdateMode();
+            break;
+
+        default:
+            break;
+    }
+}
+
 void AgileRgbLightingHelper::ApplyStaticColor(const QColor& color, unsigned int brightness_percent)
 {
     StopSoftwareTimer();
@@ -106,15 +130,12 @@ void AgileRgbLightingHelper::ApplyStaticColor(const QColor& color, unsigned int 
         (int)(color.blue()  * factor)
     );
 
-    RGBColor target_color = ToRGBColor(scaled.red(), scaled.green(), scaled.blue());
-
     std::vector<RGBController*>& controllers = ResourceManager::get()->GetRGBControllers();
 
     for(RGBController* controller : controllers)
     {
         EnsureDirectMode(controller);
-        controller->SetAllColors(target_color);
-        controller->UpdateLEDs();
+        ApplyColorToActiveMode(controller, scaled);
     }
 }
 
@@ -195,12 +216,9 @@ void AgileRgbLightingHelper::OnBreathingTick()
         (int)(breathing_color.blue()  * brightness)
     );
 
-    RGBColor target_color = ToRGBColor(scaled.red(), scaled.green(), scaled.blue());
-
     for(RGBController* controller : software_fallback_controllers)
     {
-        controller->SetAllColors(target_color);
-        controller->UpdateLEDs();
+        ApplyColorToActiveMode(controller, scaled);
     }
 }
 
@@ -283,12 +301,10 @@ void AgileRgbLightingHelper::OnRainbowTick()
     if(phase < 0.0)    phase += 360.0;
 
     QColor color = QColor::fromHsv((int)phase, 255, 255);
-    RGBColor target_color = ToRGBColor(color.red(), color.green(), color.blue());
 
     for(RGBController* controller : software_fallback_controllers)
     {
-        controller->SetAllColors(target_color);
-        controller->UpdateLEDs();
+        ApplyColorToActiveMode(controller, color);
     }
 }
 

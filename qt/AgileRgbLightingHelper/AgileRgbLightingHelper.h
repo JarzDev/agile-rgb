@@ -84,5 +84,18 @@ private:
     \*-----------------------------------------------------*/
     void        EnsureDirectMode(RGBController* controller);
 
+    /*-----------------------------------------------------*\
+    | Applies one flat color to a controller's active mode,   |
+    | using whichever path that mode's firmware actually       |
+    | expects: a per-LED buffer sent via UpdateLEDs() for       |
+    | MODE_COLORS_PER_LED modes (e.g. "Direct"), or the mode's   |
+    | own color slots sent via UpdateMode() for                  |
+    | MODE_COLORS_MODE_SPECIFIC modes (e.g. "Static" on          |
+    | headers that can't report their real LED count). Mixing    |
+    | these up sends a malformed update that visibly corrupts    |
+    | the strip instead of just coloring it.                     |
+    \*-----------------------------------------------------*/
+    void        ApplyColorToActiveMode(RGBController* controller, const QColor& color);
+
     void        StopSoftwareTimer();
 };
