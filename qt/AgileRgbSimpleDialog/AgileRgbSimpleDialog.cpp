@@ -38,6 +38,21 @@ AgileRgbSimpleDialog::AgileRgbSimpleDialog(QWidget *parent) :
     ui(new Ui::AgileRgbSimpleDialog)
 {
     /*-------------------------------------------------*\
+    | SettingsManager::SetSettings() silently drops any     |
+    | key not declared in the target's registered schema.    |
+    | "UserInterface" is registered by OpenRGBDialog (created |
+    | further below), but RegisterSettingsSchemaComplete()      |
+    | merges properties rather than replacing them, so this      |
+    | extra key can be declared here independently, as long as    |
+    | it happens before anything ever calls SetSettings on this    |
+    | key -- otherwise it gets stripped out on save                  |
+    \*-------------------------------------------------*/
+    json agile_rgb_ui_schema;
+    agile_rgb_ui_schema["agile_rgb_last_tab"]["title"] = "Last Active Tab";
+    agile_rgb_ui_schema["agile_rgb_last_tab"]["type"]  = "integer";
+    ResourceManager::get()->GetSettingsManager()->RegisterSettingsSchemaComplete("UserInterface", "User Interface", agile_rgb_ui_schema, -1, true, false);
+
+    /*-------------------------------------------------*\
     | Load the saved UI language (shared with the classic |
     | dialog's "UserInterface" settings) before building   |
     | the UI, so labels are translated on first render      |
